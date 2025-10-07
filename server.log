@@ -1528,3 +1528,10 @@ Watching for file changes with StatReloader
 [07/Oct/2025 03:25:06] "GET /status/ HTTP/1.1" 200 2965
 [07/Oct/2025 03:26:06] "GET /status/ HTTP/1.1" 200 2964
 [07/Oct/2025 23:40:45] "GET /status/ HTTP/1.1" 302 0
+[08/Oct/2025 00:47:06] "GET /status/ HTTP/1.1" 302 0
+[08/Oct/2025 00:47:06] "GET /login/?next=/status/ HTTP/1.1" 200 49540
+[08/Oct/2025 00:47:06] "GET /login/?next=/status/ HTTP/1.1" 200 49540
+[08/Oct/2025 00:47:33] "GET /status/ HTTP/1.1" 302 0
+[08/Oct/2025 00:47:33] "GET /login/?next=/status/ HTTP/1.1" 200 49540
+[08/Oct/2025 00:48:03] "GET /status/ HTTP/1.1" 302 0
+[08/Oct/2025 00:48:03] "GET /login/?next=/status/ HTTP/1.1" 200 49540

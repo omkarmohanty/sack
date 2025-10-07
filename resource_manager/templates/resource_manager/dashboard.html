@@ -1,0 +1,403 @@
+{% extends 'resource_manager/base.html' %}
+
+{% block title %}SACK Tool - Resource Management{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <!-- Header Section -->
+    <div class="row mb-4">
+        <div class="col">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <h1 class="mb-1">
+                        <i class="fas fa-desktop me-3"></i>Resource Management
+                    </h1>
+                    <p class="text-muted mb-0">Manage and monitor system resources in real-time</p>
+                </div>
+                <div class="text-end">
+                    <div class="d-flex align-items-center">
+                        <span class="badge bg-primary me-2">
+                            <i class="fas fa-clock me-1"></i>
+                            <span id="currentTime"></span>
+                        </span>
+                        <!-- Auto-refresh badge removed; use manual Refresh button on the table header -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Stats -->
+    <div class="row mb-4">
+        <div class="col-md-3 mb-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <i class="fas fa-server fa-2x text-primary mb-2"></i>
+                    <h5 class="card-title">{{ total_resources }}</h5>
+                    <p class="card-text text-muted">Total Resources</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <i class="fas fa-check-circle fa-2x text-success mb-2"></i>
+                    <h5 class="card-title" id="availableCount">{{ available_count }}</h5>
+                    <p class="card-text text-muted">Available</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <i class="fas fa-user-clock fa-2x text-danger mb-2"></i>
+                    <h5 class="card-title" id="occupiedCount">{{ occupied_count }}</h5>
+                    <p class="card-text text-muted">Occupied</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <i class="fas fa-users fa-2x text-warning mb-2"></i>
+                    <h5 class="card-title" id="queueTotal">{{ queue_total }}</h5>
+                    <p class="card-text text-muted">In Queue</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Resource Table -->
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">
+                        <i class="fas fa-list me-2"></i>Resources Overview
+                    </h5>
+                    <div class="d-flex align-items-center">
+                        <span class="badge bg-secondary me-2" id="lastUpdate">
+                            Last updated: <span id="updateTime">now</span>
+                        </span>
+                        <button class="btn btn-outline-primary btn-sm" onclick="window.location.reload()">
+                            <i class="fas fa-sync-alt me-1"></i>Refresh
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table table-dark table-hover mb-0" id="resourcesTable" style="--row-hover-bg: {% if user.is_authenticated %}{{ user.profile.theme|yesno:'#fbfdfe,#fbfdfe' }}{% else %}#fbfdfe{% endif %}; --row-hover-color: {% if user.is_authenticated %}{% if user.profile.theme == 'light' %}#212529{% else %}#f8f9fa{% endif %}{% else %}#212529{% endif %};">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th scope="col">
+                                        <i class="fas fa-desktop me-1"></i>PC Name
+                                    </th>
+                                    <th scope="col">
+                                        <i class="fas fa-network-wired me-1"></i>IP Address
+                                    </th>
+                                    <th scope="col">
+                                        <i class="fas fa-tag me-1"></i>Resource Type
+                                    </th>
+                                    <th scope="col">
+                                        <i class="fas fa-info-circle me-1"></i>Status
+                                    </th>
+                                    <th scope="col">
+                                        <i class="fas fa-user me-1"></i>Current User
+                                    </th>
+                                    <th scope="col">
+                                        <i class="fas fa-hourglass-half me-1"></i>Start Time
+                                    </th>
+                                    <th scope="col">
+                                        <i class="fas fa-clock me-1"></i>Remaining Time
+                                    </th>
+                                    <th scope="col">
+                                        <i class="fas fa-users me-1"></i>Queue
+                                        <i class="fas fa-info-circle text-muted ms-1" 
+                                           data-bs-toggle="tooltip" 
+                                           title="Number of users waiting in queue"></i>
+                                    </th>
+                                    <th scope="col">
+                                        <i class="fas fa-cogs me-1"></i>Action
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for data in resource_data %}
+                                <tr data-resource-id="{{ data.resource.id }}" class="resource-row">
+                                    <td class="fw-bold">
+                                        <i class="fas fa-desktop me-2 text-primary"></i>
+                                        {{ data.resource.pc_name }}
+                                        {% if data.resource.pc_name|length > 15 %}
+                                            <i class="fas fa-info-circle text-muted ms-1" 
+                                               data-bs-toggle="tooltip" 
+                                               title="{{ data.resource.pc_name }}"></i>
+                                        {% endif %}
+                                    </td>
+                                    <td class="font-monospace">{{ data.resource.ip_address }}</td>
+                                    <td>
+                                        {% if data.resource.resource_type == 'Windows' %}
+                                            <i class="fab fa-windows me-1 text-info"></i>
+                                        {% elif data.resource.resource_type == 'Ubuntu' %}
+                                            <i class="fab fa-ubuntu me-1 text-warning"></i>
+                                        {% else %}
+                                            <i class="fab fa-linux me-1 text-success"></i>
+                                        {% endif %}
+                                        {{ data.resource.resource_type }}
+                                    </td>
+                                    <td class="status-cell">
+                                        {% if data.resource.status == 'Available' %}
+                                            <span class="status-indicator status-available"></span>
+                                            <span class="badge badge-available">Available</span>
+                                        {% else %}
+                                            <span class="status-indicator status-occupied"></span>
+                                            <span class="badge badge-occupied">Occupied</span>
+                                        {% endif %}
+                                    </td>
+                                    <td class="user-cell">
+                                        {% if data.current_usage %}
+                                            <i class="fas fa-user me-1"></i>
+                                            {{ data.current_usage.user.username }}
+                                            {% if data.current_usage.user.username|length > 8 %}
+                                                <span class="text-muted small">({{ data.current_usage.user.username|truncatechars:8 }})</span>
+                                            {% endif %}
+                                        {% else %}
+                                            <span class="text-muted">-</span>
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        {% if data.current_usage %}
+                                            <span class="font-monospace small">
+                                                <i class="fas fa-calendar-alt me-1"></i>
+                                                {{ data.current_usage.start_time|date:"Y-m-d H:i:s" }}
+                                            </span>
+                                        {% else %}
+                                            <span class="text-muted">-</span>
+                                        {% endif %}
+                                    </td>
+                                    <td class="time-cell">
+                                        {% if data.remaining_time > 0 %}
+                                            <span class="badge bg-info font-monospace">
+                                                <i class="fas fa-hourglass-half me-1"></i>
+                                                <span class="remaining-time" data-seconds="{{ data.remaining_time }}">
+                                                    {{ data.remaining_time|floatformat:0 }}s
+                                                </span>
+                                            </span>
+                                        {% else %}
+                                            <span class="text-muted">-</span>
+                                        {% endif %}
+                                    </td>
+                                    <td class="queue-cell">
+                                        {% if data.queue_count > 0 %}
+                                            <div class="queue-list small text-start">
+                                                <i class="fas fa-users me-1"></i>
+                                                <ul class="mb-0 ps-3">
+                                                {% for entry in data.resource.queue_entries.all|slice:":5" %}
+                                                    <li>{{ entry.user.username }}</li>
+                                                {% endfor %}
+                                                {% if data.queue_count > 5 %}
+                                                    <li class="text-muted">...and {{ data.queue_count|add:-5 }} more</li>
+                                                {% endif %}
+                                                </ul>
+                                            </div>
+                                            {% if data.user_in_queue %}
+                                                <div class="mt-1">
+                                                    <button class="btn btn-leave-queue btn-sm" onclick="leaveQueue({{ data.resource.id }})">Leave Queue</button>
+                                                </div>
+                                            {% endif %}
+                                        {% else %}
+                                            <span class="text-muted">-</span>
+                                        {% endif %}
+                                    </td>
+                                    <td class="action-cell">
+                                        {% if data.resource.status == 'Available' %}
+                                            <button class="btn btn-occupy btn-sm" onclick="showUsageModal({{ data.resource.id }})">
+                                                <i class="fas fa-play me-1"></i>Occupy
+                                            </button>
+                                        {% elif data.is_current_user %}
+                                            <button class="btn btn-release btn-sm me-1" onclick="releaseResource({{ data.resource.id }})">
+                                                <i class="fas fa-stop me-1"></i>Release
+                                            </button>
+                                            <button class="btn btn-extend btn-sm" onclick="extendTime({{ data.resource.id }})">
+                                                <i class="fas fa-plus me-1"></i>+15min
+                                            </button>
+                                        {% elif data.user_in_queue %}
+                                            <button class="btn btn-secondary btn-sm" onclick="leaveQueue({{ data.resource.id }})">
+                                                <i class="fas fa-times me-1"></i>Leave Queue
+                                            </button>
+                                        {% else %}
+                                            <button class="btn btn-queue btn-sm" onclick="joinQueue({{ data.resource.id }})">
+                                                <i class="fas fa-clock me-1"></i>Join Queue
+                                            </button>
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                                {% empty %}
+                                <tr>
+                                    <td colspan="9" class="text-center py-4">
+                                        <i class="fas fa-exclamation-circle fa-2x text-muted mb-2"></i>
+                                        <p class="text-muted mb-0">No resources available</p>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% if user.is_superuser %}
+    <!-- Admin Section -->
+    <div class="row mt-4">
+        <div class="col">
+            <div class="card border-warning">
+                <div class="card-header bg-warning text-dark">
+                    <h6 class="mb-0">
+                        <i class="fas fa-crown me-2"></i>Administrator Tools
+                    </h6>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex flex-wrap gap-2">
+                        <a href="/admin/" target="_blank" class="btn btn-outline-warning btn-sm">
+                            <i class="fas fa-cog me-1"></i>Django Admin
+                        </a>
+                        <button class="btn btn-outline-info btn-sm" onclick="showSystemLogs()">
+                            <i class="fas fa-list-alt me-1"></i>System Logs
+                        </button>
+                        <button class="btn btn-outline-success btn-sm" onclick="exportData()">
+                            <i class="fas fa-download me-1"></i>Export Data
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+
+<script>
+// Update current time
+function updateCurrentTime() {
+    const now = new Date();
+    const timeString = now.toLocaleTimeString('en-US', {
+        hour12: false,
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+    });
+    document.getElementById('currentTime').textContent = timeString;
+
+    // Update last update time
+    const updateTime = document.getElementById('updateTime');
+    if (updateTime) {
+        updateTime.textContent = now.toLocaleTimeString('en-US', {
+            hour12: false,
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit'
+        });
+    }
+}
+
+// (Per-second remaining-time tick is implemented in base template)
+
+// Leave queue function
+function leaveQueue(resourceId) {
+    if (!confirm('Are you sure you want to leave the queue?')) {
+        return;
+    }
+
+    fetch('/leave-queue/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'X-CSRFToken': getCookie('csrftoken')
+        },
+        body: `resource_id=${resourceId}`
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            showNotification(
+                `<i class="fas fa-check-circle me-2"></i><strong>Success!</strong> ${data.message}`,
+                'success'
+            );
+            setTimeout(() => window.location.reload(), 1000);
+        } else {
+            showNotification(
+                `<i class="fas fa-exclamation-circle me-2"></i><strong>Error:</strong> ${data.message}`,
+                'error'
+            );
+        }
+    })
+    .catch(error => {
+        showNotification(
+            `<i class="fas fa-exclamation-triangle me-2"></i><strong>Network Error:</strong> Failed to leave queue`,
+            'error'
+        );
+    });
+}
+
+// Initialize dashboard
+document.addEventListener('DOMContentLoaded', function() {
+    // Enable Bootstrap tooltips
+    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+
+    // Start time updates
+    updateCurrentTime();
+    setInterval(updateCurrentTime, 1000);
+    setInterval(updateRemainingTimes, 1000);
+
+    // Add row hover effects
+    const rows = document.querySelectorAll('.resource-row');
+    rows.forEach(row => {
+        row.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.02)';
+            this.style.transition = 'transform 0.2s ease';
+        });
+
+        row.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+        });
+    });
+});
+
+// Admin functions
+function showSystemLogs() {
+    showNotification(
+        `<i class="fas fa-info-circle me-2"></i>System logs feature coming soon!`,
+        'info'
+    );
+}
+
+function exportData() {
+    showNotification(
+        `<i class="fas fa-info-circle me-2"></i>Data export feature coming soon!`,
+        'info'
+    );
+}
+</script>
+<script>
+// Ensure inline hover vars are set from localStorage for unauthenticated users
+document.addEventListener('DOMContentLoaded', function() {
+    try {
+        const tbl = document.getElementById('resourcesTable');
+        if (!tbl) return;
+        const theme = localStorage.getItem('sack_theme');
+        if (theme) {
+            if (theme === 'light') {
+                tbl.style.setProperty('--row-hover-bg', '#fbfdfe');
+                tbl.style.setProperty('--row-hover-color', '#212529');
+            } else {
+                tbl.style.setProperty('--row-hover-bg', 'rgba(255,255,255,0.03)');
+                tbl.style.setProperty('--row-hover-color', '#f8f9fa');
+            }
+        }
+    } catch(e) { console.warn(e); }
+});
+</script>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends "admin/base_site.html" %}
+
+{% load i18n %}
+
+{% block content %}
+<div class="card" style="max-width:420px;margin:2rem auto;padding:1.5rem;">
+  <h1 class="h3 mb-3">{% trans 'Log in' %}</h1>
+
+  {% if form.errors %}
+    <p class="text-danger">{% trans "Please enter the correct username and password for a staff account. Note that both fields may be case-sensitive." %}</p>
+  {% endif %}
+
+  <form action="" method="post" id="adminlogin" novalidate>
+    {% csrf_token %}
+
+    <div class="mb-3">
+      <label for="id_username" class="form-label">{% trans "Username:" %}</label>
+      {{ form.username }}
+    </div>
+
+    <div class="mb-3">
+      <label for="id_password" class="form-label">{% trans "Password:" %}</label>
+      <div class="input-group">
+        {{ form.password.as_widget(attrs={"class": "form-control", "id": "id_password", "placeholder": "Enter password"}) }}
+        <button class="btn btn-outline-secondary" type="button" id="adminTogglePassword" tabindex="-1" aria-label="Show password">
+          <i class="fas fa-eye" id="adminTogglePasswordIcon"></i>
+        </button>
+      </div>
+    </div>
+
+    {% if site_url %}
+      <div class="mb-3">{% blocktrans %}You are logging into {{ site_url }}{% endblocktrans %}</div>
+    {% endif %}
+
+    <div class="d-grid">
+      <input type="submit" value="{% trans 'Log in' %}" class="btn btn-primary" />
+    </div>
+  </form>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const toggleBtn = document.getElementById('adminTogglePassword');
+  const pwd = document.getElementById('id_password');
+  const icon = document.getElementById('adminTogglePasswordIcon');
+  if (toggleBtn && pwd) {
+    toggleBtn.addEventListener('click', function() {
+      const type = pwd.getAttribute('type') === 'password' ? 'text' : 'password';
+      pwd.setAttribute('type', type);
+      icon.classList.toggle('fa-eye');
+      icon.classList.toggle('fa-eye-slash');
+      this.setAttribute('aria-label', type === 'text' ? 'Hide password' : 'Show password');
+    });
+  }
+});
+</script>
+
+{% endblock %}

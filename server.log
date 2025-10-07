@@ -1,0 +1,1530 @@
+Watching for file changes with StatReloader
+System check identified some issues:
+
+WARNINGS:
+?: (staticfiles.W004) The directory 'D:\Codes\sack\static' in the STATICFILES_DIRS setting does not exist.
+
+System check identified 1 issue (0 silenced).
+[07/Oct/2025 00:57:25] "GET / HTTP/1.1" 302 0
+[07/Oct/2025 00:57:25] "GET /login/?next=/ HTTP/1.1" 200 32844
+[07/Oct/2025 00:57:25] "GET /status/ HTTP/1.1" 302 0
+[07/Oct/2025 00:57:25] "GET /login/?next=/status/ HTTP/1.1" 200 32844
+Not Found: /favicon.ico
+[07/Oct/2025 00:57:26] "GET /favicon.ico HTTP/1.1" 404 4891
+[07/Oct/2025 00:57:55] "GET /status/ HTTP/1.1" 302 0
+[07/Oct/2025 00:57:55] "GET /login/?next=/status/ HTTP/1.1" 200 32844
+[07/Oct/2025 00:58:20] "POST /login/?next=/ HTTP/1.1" 302 0
+[07/Oct/2025 00:58:20] "GET / HTTP/1.1" 200 67075
+[07/Oct/2025 00:58:20] "GET /status/ HTTP/1.1" 200 2072
+[07/Oct/2025 00:58:44] "POST /occupy/ HTTP/1.1" 200 62
+[07/Oct/2025 00:58:45] "GET / HTTP/1.1" 200 68000
+[07/Oct/2025 00:58:45] "GET /status/ HTTP/1.1" 200 2114
+[07/Oct/2025 00:59:15] "GET /status/ HTTP/1.1" 200 2114
+[07/Oct/2025 00:59:45] "GET /status/ HTTP/1.1" 200 2114
+[07/Oct/2025 00:59:45] "GET / HTTP/1.1" 200 68000
+[07/Oct/2025 00:59:45] "GET /status/ HTTP/1.1" 200 2114
+[07/Oct/2025 01:00:15] "GET /status/ HTTP/1.1" 200 2114
+[07/Oct/2025 01:00:15] "GET /logout/ HTTP/1.1" 302 0
+[07/Oct/2025 01:00:15] "GET /login/ HTTP/1.1" 200 33834
+[07/Oct/2025 01:00:15] "GET /status/ HTTP/1.1" 302 0
+[07/Oct/2025 01:00:15] "GET /login/?next=/status/ HTTP/1.1" 200 32844
+[07/Oct/2025 01:00:29] "POST /login/ HTTP/1.1" 302 0
+[07/Oct/2025 01:00:29] "GET / HTTP/1.1" 200 67743
+[07/Oct/2025 01:00:29] "GET /status/ HTTP/1.1" 200 2115
+[07/Oct/2025 01:00:34] "POST /join-queue/ HTTP/1.1" 200 57
+[07/Oct/2025 01:00:35] "GET / HTTP/1.1" 200 68225
+[07/Oct/2025 01:00:35] "GET /status/ HTTP/1.1" 200 2115
+[07/Oct/2025 01:00:50] "GET /logout/ HTTP/1.1" 302 0
+[07/Oct/2025 01:00:50] "GET /login/ HTTP/1.1" 200 33842
+[07/Oct/2025 01:00:50] "GET /status/ HTTP/1.1" 302 0
+[07/Oct/2025 01:00:50] "GET /login/?next=/status/ HTTP/1.1" 200 32844
+[07/Oct/2025 01:01:20] "GET /status/ HTTP/1.1" 302 0
+[07/Oct/2025 01:01:20] "GET /login/?next=/status/ HTTP/1.1" 200 32844
+[07/Oct/2025 01:01:50] "GET /status/ HTTP/1.1" 302 0
+[07/Oct/2025 01:01:50] "GET /login/ HTTP/1.1" 200 32844
+[07/Oct/2025 01:01:50] "GET /login/?next=/status/ HTTP/1.1" 200 32844
+[07/Oct/2025 01:01:50] "GET /status/ HTTP/1.1" 302 0
+[07/Oct/2025 01:01:50] "GET /login/?next=/status/ HTTP/1.1" 200 32844
+[07/Oct/2025 01:02:20] "GET /status/ HTTP/1.1" 302 0
+[07/Oct/2025 01:02:20] "GET /login/?next=/status/ HTTP/1.1" 200 32844
+[07/Oct/2025 01:02:34] "POST /login/ HTTP/1.1" 200 33165
+[07/Oct/2025 01:02:34] "GET /status/ HTTP/1.1" 302 0
+[07/Oct/2025 01:02:34] "GET /login/?next=/status/ HTTP/1.1" 200 32844
+[07/Oct/2025 01:03:04] "GET /status/ HTTP/1.1" 302 0
+[07/Oct/2025 01:03:04] "GET /login/?next=/status/ HTTP/1.1" 200 32844
+[07/Oct/2025 01:03:34] "GET /status/ HTTP/1.1" 302 0
+[07/Oct/2025 01:03:34] "GET /login/?next=/status/ HTTP/1.1" 200 32844
+[07/Oct/2025 01:03:34] "POST /login/ HTTP/1.1" 200 33165
+[07/Oct/2025 01:03:34] "GET /status/ HTTP/1.1" 302 0
+[07/Oct/2025 01:03:34] "GET /login/?next=/status/ HTTP/1.1" 200 32844
+[07/Oct/2025 01:04:04] "GET /status/ HTTP/1.1" 302 0
+[07/Oct/2025 01:04:04] "GET /login/?next=/status/ HTTP/1.1" 200 32844
+[07/Oct/2025 01:04:34] "GET /status/ HTTP/1.1" 302 0
+Internal Server Error: /login/
+Traceback (most recent call last):
+  File "D:\Codes\sack\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Codes\sack\resource_manager\views.py", line 46, in login_view
+    return render(request, 'resource_manager/login.html', {'form': form})
+  File "D:\Codes\sack\.venv\lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 489, in parse
+    raise self.error(token, e)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 710, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '(attrs={"class": "form-control", "id": "password", "placeholder": "Enter your password"})' from 'form.password.as_widget(attrs={"class": "form-control", "id": "password", "placeholder": "Enter your password"})'
+[07/Oct/2025 01:04:34] "GET /login/?next=/status/ HTTP/1.1" 500 210506
+Internal Server Error: /login/
+Traceback (most recent call last):
+  File "D:\Codes\sack\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Codes\sack\resource_manager\views.py", line 46, in login_view
+    return render(request, 'resource_manager/login.html', {'form': form})
+  File "D:\Codes\sack\.venv\lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 489, in parse
+    raise self.error(token, e)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 710, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '(attrs={"class": "form-control", "id": "password", "placeholder": "Enter your password"})' from 'form.password.as_widget(attrs={"class": "form-control", "id": "password", "placeholder": "Enter your password"})'
+[07/Oct/2025 01:04:34] "POST /login/ HTTP/1.1" 500 211324
+Internal Server Error: /login/
+Traceback (most recent call last):
+  File "D:\Codes\sack\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Codes\sack\resource_manager\views.py", line 46, in login_view
+    return render(request, 'resource_manager/login.html', {'form': form})
+  File "D:\Codes\sack\.venv\lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 489, in parse
+    raise self.error(token, e)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 710, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '(attrs={"class": "form-control", "id": "password", "placeholder": "Enter your password"})' from 'form.password.as_widget(attrs={"class": "form-control", "id": "password", "placeholder": "Enter your password"})'
+[07/Oct/2025 01:05:19] "POST /login/ HTTP/1.1" 500 211455
+[07/Oct/2025 01:06:47] "GET /login/ HTTP/1.1" 200 34092
+[07/Oct/2025 01:06:58] "POST /login/ HTTP/1.1" 200 34413
+[07/Oct/2025 01:06:58] "GET /status/ HTTP/1.1" 302 0
+[07/Oct/2025 01:06:58] "GET /login/?next=/status/ HTTP/1.1" 200 34092
+[07/Oct/2025 01:07:28] "GET /status/ HTTP/1.1" 302 0
+[07/Oct/2025 01:07:28] "GET /login/?next=/status/ HTTP/1.1" 200 34092
+[07/Oct/2025 01:07:46] "GET /admin HTTP/1.1" 301 0
+[07/Oct/2025 01:07:46] "GET /admin/ HTTP/1.1" 302 0
+Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "D:\Codes\sack\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 489, in parse
+    raise self.error(token, e)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 710, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '(attrs={"class": "form-control", "id": "id_password", "placeholder": "Enter password"})' from 'form.password.as_widget(attrs={"class": "form-control", "id": "id_password", "placeholder": "Enter password"})'
+[07/Oct/2025 01:07:46] "GET /admin/login/?next=/admin/ HTTP/1.1" 500 198997
+[07/Oct/2025 01:07:48] "GET /admin/ HTTP/1.1" 302 0
+Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "D:\Codes\sack\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 489, in parse
+    raise self.error(token, e)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 710, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '(attrs={"class": "form-control", "id": "id_password", "placeholder": "Enter password"})' from 'form.password.as_widget(attrs={"class": "form-control", "id": "id_password", "placeholder": "Enter password"})'
+[07/Oct/2025 01:07:48] "GET /admin/login/?next=/admin/ HTTP/1.1" 500 198997
+[07/Oct/2025 01:07:58] "GET /status/ HTTP/1.1" 302 0
+[07/Oct/2025 01:07:58] "GET /login/?next=/status/ HTTP/1.1" 200 34092
+[07/Oct/2025 01:08:28] "GET /status/ HTTP/1.1" 302 0
+[07/Oct/2025 01:08:28] "GET /login/?next=/status/ HTTP/1.1" 200 34092
+[07/Oct/2025 01:08:29] "POST /login/ HTTP/1.1" 302 0
+[07/Oct/2025 01:08:29] "GET / HTTP/1.1" 200 69307
+[07/Oct/2025 01:08:29] "GET /status/ HTTP/1.1" 200 2115
+[07/Oct/2025 01:08:37] "GET /admin/ HTTP/1.1" 200 10073
+[07/Oct/2025 01:08:37] "GET /static/admin/css/base.css HTTP/1.1" 200 22120
+[07/Oct/2025 01:08:37] "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+[07/Oct/2025 01:08:37] "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+[07/Oct/2025 01:08:37] "GET /static/admin/css/responsive.css HTTP/1.1" 200 16565
+[07/Oct/2025 01:08:37] "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+[07/Oct/2025 01:08:37] "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2808
+[07/Oct/2025 01:08:37] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+[07/Oct/2025 01:08:37] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+[07/Oct/2025 01:08:37] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+[07/Oct/2025 01:08:59] "GET /status/ HTTP/1.1" 200 2115
+[07/Oct/2025 01:09:14] "GET /admin/ HTTP/1.1" 200 10073
+[07/Oct/2025 01:09:36] "GET / HTTP/1.1" 302 0
+[07/Oct/2025 01:09:36] "GET /login/?next=/ HTTP/1.1" 200 34092
+[07/Oct/2025 01:09:36] "GET /status/ HTTP/1.1" 302 0
+[07/Oct/2025 01:09:36] "GET /login/?next=/status/ HTTP/1.1" 200 34092
+Not Found: /favicon.ico
+[07/Oct/2025 01:09:36] "GET /favicon.ico HTTP/1.1" 404 4891
+[07/Oct/2025 01:09:41] "GET /admin/ HTTP/1.1" 302 0
+Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "D:\Codes\sack\.venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 489, in parse
+    raise self.error(token, e)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\template\base.py", line 710, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '(attrs={"class": "form-control", "id": "id_password", "placeholder": "Enter password"})' from 'form.password.as_widget(attrs={"class": "form-control", "id": "id_password", "placeholder": "Enter password"})'
+[07/Oct/2025 01:09:41] "GET /admin/login/?next=/admin/ HTTP/1.1" 500 198997
+[07/Oct/2025 01:09:52] "POST /login/?next=/ HTTP/1.1" 302 0
+[07/Oct/2025 01:09:52] "GET / HTTP/1.1" 200 69307
+[07/Oct/2025 01:09:52] "GET /status/ HTTP/1.1" 200 2115
+[07/Oct/2025 01:10:22] "GET /status/ HTTP/1.1" 200 2115
+[07/Oct/2025 01:10:52] "GET /status/ HTTP/1.1" 200 2115
+[07/Oct/2025 01:10:52] "GET / HTTP/1.1" 200 69307
+[07/Oct/2025 01:10:52] "GET /status/ HTTP/1.1" 200 2115
+[07/Oct/2025 01:11:22] "GET /status/ HTTP/1.1" 200 2115
+[07/Oct/2025 01:11:52] "GET /status/ HTTP/1.1" 200 2115
+[07/Oct/2025 01:11:52] "GET / HTTP/1.1" 200 69307
+[07/Oct/2025 01:11:52] "GET /status/ HTTP/1.1" 200 2115
+[07/Oct/2025 01:12:22] "GET /status/ HTTP/1.1" 200 2114
+D:\Codes\sack\resource_manager\views.py changed, reloading.
+Performing system checks...
+
+October 07, 2025 - 00:56:50
+Django version 5.2.7, using settings 'sack_tool.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CTRL-BREAK.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+Watching for file changes with StatReloader
+System check identified some issues:
+
+WARNINGS:
+?: (staticfiles.W004) The directory 'D:\Codes\sack\static' in the STATICFILES_DIRS setting does not exist.
+
+System check identified 1 issue (0 silenced).
+[07/Oct/2025 01:12:52] "GET /status/ HTTP/1.1" 200 2114
+[07/Oct/2025 01:13:18] "GET /login/ HTTP/1.1" 200 34092
+Forbidden (CSRF token missing.): /login/
+[07/Oct/2025 01:13:19] "POST /login/ HTTP/1.1" 403 2491
+[07/Oct/2025 01:13:22] "GET /status/ HTTP/1.1" 200 2114
+[07/Oct/2025 01:13:52] "GET /status/ HTTP/1.1" 200 2114
+[07/Oct/2025 01:13:52] "GET / HTTP/1.1" 200 69149
+[07/Oct/2025 01:13:52] "GET /status/ HTTP/1.1" 200 2114
+[07/Oct/2025 01:14:00] "POST /occupy/ HTTP/1.1" 200 62
+[07/Oct/2025 01:14:01] "GET / HTTP/1.1" 200 70072
+[07/Oct/2025 01:14:01] "GET /status/ HTTP/1.1" 200 2155
+[07/Oct/2025 01:14:07] "POST /occupy/ HTTP/1.1" 200 93
+[07/Oct/2025 01:14:12] "POST /occupy/ HTTP/1.1" 200 93
+[07/Oct/2025 01:14:31] "GET /status/ HTTP/1.1" 200 2155
+[07/Oct/2025 01:15:01] "GET / HTTP/1.1" 200 70072
+[07/Oct/2025 01:15:01] "GET /status/ HTTP/1.1" 200 2155
+[07/Oct/2025 01:15:01] "GET /status/ HTTP/1.1" 200 2155
+[07/Oct/2025 01:15:31] "GET /status/ HTTP/1.1" 200 2155
+[07/Oct/2025 01:16:01] "GET / HTTP/1.1" 200 70072
+[07/Oct/2025 01:16:01,829] - Broken pipe from ('127.0.0.1', 53341)
+[07/Oct/2025 01:16:01] "GET /status/ HTTP/1.1" 200 2155
+D:\Codes\sack\resource_manager\views.py changed, reloading.
+Performing system checks...
+
+October 07, 2025 - 01:12:48
+Django version 5.2.7, using settings 'sack_tool.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CTRL-BREAK.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+Watching for file changes with StatReloader
+System check identified some issues:
+
+WARNINGS:
+?: (staticfiles.W004) The directory 'D:\Codes\sack\static' in the STATICFILES_DIRS setting does not exist.
+
+System check identified 1 issue (0 silenced).
+[07/Oct/2025 01:16:31] "GET /status/ HTTP/1.1" 200 2155
+[07/Oct/2025 01:17:01] "GET /status/ HTTP/1.1" 200 2155
+[07/Oct/2025 01:17:01] "GET / HTTP/1.1" 200 70072
+[07/Oct/2025 01:17:01] "GET /status/ HTTP/1.1" 200 2155
+[07/Oct/2025 01:17:31] "GET /status/ HTTP/1.1" 200 2155
+[07/Oct/2025 01:18:01] "GET /status/ HTTP/1.1" 200 2155
+[07/Oct/2025 01:18:01] "GET / HTTP/1.1" 200 70072
+[07/Oct/2025 01:18:01] "GET /status/ HTTP/1.1" 200 2155
+[07/Oct/2025 01:18:28] "GET /logout/ HTTP/1.1" 302 0
+[07/Oct/2025 01:18:28] "GET /login/ HTTP/1.1" 200 35082
+[07/Oct/2025 01:18:28] "GET /status/ HTTP/1.1" 302 0
+[07/Oct/2025 01:18:28] "GET /login/?next=/status/ HTTP/1.1" 200 34092
+[07/Oct/2025 01:18:48] "POST /login/ HTTP/1.1" 302 0
+[07/Oct/2025 01:18:48] "GET / HTTP/1.1" 200 68733
+[07/Oct/2025 01:18:48] "GET /status/ HTTP/1.1" 200 2156
+[07/Oct/2025 01:18:52] "POST /join-queue/ HTTP/1.1" 200 61
+[07/Oct/2025 01:19:16] "POST /occupy/ HTTP/1.1" 200 62
+[07/Oct/2025 01:19:17] "GET / HTTP/1.1" 200 69656
+[07/Oct/2025 01:19:17] "GET /status/ HTTP/1.1" 200 2197
+[07/Oct/2025 01:19:21] "POST /release/ HTTP/1.1" 200 62
+[07/Oct/2025 01:19:22] "GET / HTTP/1.1" 200 68733
+[07/Oct/2025 01:19:22] "GET /status/ HTTP/1.1" 200 2156
+[07/Oct/2025 01:19:52] "GET /status/ HTTP/1.1" 200 2156
+[07/Oct/2025 01:20:22] "GET /status/ HTTP/1.1" 200 2156
+[07/Oct/2025 01:20:22] "GET / HTTP/1.1" 200 68733
+[07/Oct/2025 01:20:22] "GET /status/ HTTP/1.1" 200 2156
+[07/Oct/2025 01:20:52] "GET /status/ HTTP/1.1" 200 2156
+[07/Oct/2025 01:21:22] "GET /status/ HTTP/1.1" 200 2156
+[07/Oct/2025 01:21:22] "GET / HTTP/1.1" 200 68733
+[07/Oct/2025 01:21:22] "GET /status/ HTTP/1.1" 200 2156
+[07/Oct/2025 01:21:37] "GET / HTTP/1.1" 200 68733
+[07/Oct/2025 01:21:37] "GET /status/ HTTP/1.1" 200 2156
+[07/Oct/2025 01:21:39] "GET / HTTP/1.1" 200 68733
+[07/Oct/2025 01:21:39] "GET /status/ HTTP/1.1" 200 2156
+[07/Oct/2025 01:21:39] "GET / HTTP/1.1" 200 68733
+[07/Oct/2025 01:21:39] "GET /status/ HTTP/1.1" 200 2156
+[07/Oct/2025 01:22:09] "GET /status/ HTTP/1.1" 200 2156
+[07/Oct/2025 01:22:39] "GET /status/ HTTP/1.1" 200 2156
+[07/Oct/2025 01:22:39] "GET / HTTP/1.1" 200 68733
+[07/Oct/2025 01:22:39] "GET /status/ HTTP/1.1" 200 2156
+[07/Oct/2025 01:23:09] "GET /status/ HTTP/1.1" 200 2156
+[07/Oct/2025 01:23:39] "GET /status/ HTTP/1.1" 200 2156
+[07/Oct/2025 01:23:39] "GET / HTTP/1.1" 200 69095
+[07/Oct/2025 01:23:39] "GET /status/ HTTP/1.1" 200 2156
+[07/Oct/2025 01:24:09] "GET /status/ HTTP/1.1" 200 2156
+D:\Codes\sack\resource_manager\views.py changed, reloading.
+Performing system checks...
+
+October 07, 2025 - 01:16:25
+Django version 5.2.7, using settings 'sack_tool.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CTRL-BREAK.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+Watching for file changes with StatReloader
+System check identified some issues:
+
+WARNINGS:
+?: (staticfiles.W004) The directory 'D:\Codes\sack\static' in the STATICFILES_DIRS setting does not exist.
+
+System check identified 1 issue (0 silenced).
+[07/Oct/2025 01:24:39] "GET /status/ HTTP/1.1" 200 263
+[07/Oct/2025 01:24:39] "GET / HTTP/1.1" 200 71596
+[07/Oct/2025 01:24:40] "GET /status/ HTTP/1.1" 200 263
+D:\Codes\sack\resource_manager\models.py changed, reloading.
+Performing system checks...
+
+October 07, 2025 - 01:24:11
+Django version 5.2.7, using settings 'sack_tool.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CTRL-BREAK.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+Watching for file changes with StatReloader
+System check identified some issues:
+
+WARNINGS:
+?: (staticfiles.W004) The directory 'D:\Codes\sack\static' in the STATICFILES_DIRS setting does not exist.
+
+System check identified 1 issue (0 silenced).
+[07/Oct/2025 01:25:10] "GET /status/ HTTP/1.1" 200 263
+D:\Codes\sack\resource_manager\views.py changed, reloading.
+Performing system checks...
+
+October 07, 2025 - 01:25:07
+Django version 5.2.7, using settings 'sack_tool.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CTRL-BREAK.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+Watching for file changes with StatReloader
+System check identified some issues:
+
+WARNINGS:
+?: (staticfiles.W004) The directory 'D:\Codes\sack\static' in the STATICFILES_DIRS setting does not exist.
+
+System check identified 1 issue (0 silenced).
+[07/Oct/2025 01:25:40] "GET /status/ HTTP/1.1" 200 263
+[07/Oct/2025 01:25:40] "GET / HTTP/1.1" 200 71879
+[07/Oct/2025 01:25:40] "GET /status/ HTTP/1.1" 200 263
+[07/Oct/2025 01:26:10] "GET /status/ HTTP/1.1" 200 263
+[07/Oct/2025 01:26:40] "GET /status/ HTTP/1.1" 200 263
+[07/Oct/2025 01:26:40] "GET / HTTP/1.1" 200 72520
+[07/Oct/2025 01:26:40] "GET /status/ HTTP/1.1" 200 263
+D:\Codes\sack\resource_manager\views.py changed, reloading.
+Performing system checks...
+
+October 07, 2025 - 01:25:15
+Django version 5.2.7, using settings 'sack_tool.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CTRL-BREAK.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+Watching for file changes with StatReloader
+System check identified some issues:
+
+WARNINGS:
+?: (staticfiles.W004) The directory 'D:\Codes\sack\static' in the STATICFILES_DIRS setting does not exist.
+
+System check identified 1 issue (0 silenced).
+[07/Oct/2025 01:27:10] "GET /status/ HTTP/1.1" 200 263
+D:\Codes\sack\resource_manager\views.py changed, reloading.
+Performing system checks...
+
+October 07, 2025 - 01:26:41
+Django version 5.2.7, using settings 'sack_tool.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CTRL-BREAK.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+Watching for file changes with StatReloader
+System check identified some issues:
+
+WARNINGS:
+?: (staticfiles.W004) The directory 'D:\Codes\sack\static' in the STATICFILES_DIRS setting does not exist.
+
+System check identified 1 issue (0 silenced).
+[07/Oct/2025 01:27:40] "GET /status/ HTTP/1.1" 200 263
+[07/Oct/2025 01:27:40] "GET / HTTP/1.1" 200 71644
+[07/Oct/2025 01:27:40] "GET /status/ HTTP/1.1" 200 263
+[07/Oct/2025 01:28:10] "GET /status/ HTTP/1.1" 200 263
+[07/Oct/2025 01:28:40] "GET /status/ HTTP/1.1" 200 263
+[07/Oct/2025 01:28:40] "GET / HTTP/1.1" 200 71644
+[07/Oct/2025 01:28:40] "GET /status/ HTTP/1.1" 200 263
+[07/Oct/2025 01:28:57] "POST /join-queue/ HTTP/1.1" 200 57
+[07/Oct/2025 01:28:58] "GET / HTTP/1.1" 200 72488
+[07/Oct/2025 01:28:58] "GET /status/ HTTP/1.1" 200 263
+[07/Oct/2025 01:29:28] "GET /status/ HTTP/1.1" 200 263
+[07/Oct/2025 01:29:58] "GET / HTTP/1.1" 200 72488
+[07/Oct/2025 01:29:58,923] - Broken pipe from ('127.0.0.1', 54466)
+[07/Oct/2025 01:29:58] "GET /status/ HTTP/1.1" 200 263
+[07/Oct/2025 01:30:28] "GET /status/ HTTP/1.1" 200 263
+[07/Oct/2025 01:30:58] "GET /status/ HTTP/1.1" 200 263
+[07/Oct/2025 01:31:28] "GET /status/ HTTP/1.1" 200 263
+[07/Oct/2025 01:31:58] "GET /status/ HTTP/1.1" 200 263
+[07/Oct/2025 01:31:58] "GET / HTTP/1.1" 200 72872
+[07/Oct/2025 01:31:58] "GET /static/sw.js HTTP/1.1" 404 1942
+[07/Oct/2025 01:31:59] "GET /status/ HTTP/1.1" 200 263
+[07/Oct/2025 01:32:29] "GET /status/ HTTP/1.1" 200 263
+[07/Oct/2025 01:32:59] "GET /status/ HTTP/1.1" 200 263
+[07/Oct/2025 01:32:59] "GET / HTTP/1.1" 200 72872
+[07/Oct/2025 01:32:59] "GET /static/sw.js HTTP/1.1" 404 1942
+[07/Oct/2025 01:32:59] "GET /status/ HTTP/1.1" 200 263
+[07/Oct/2025 01:33:04] "GET / HTTP/1.1" 200 72872
+[07/Oct/2025 01:33:04] "GET /static/sw.js HTTP/1.1" 404 1942
+[07/Oct/2025 01:33:04] "GET /status/ HTTP/1.1" 200 263
+[07/Oct/2025 01:33:06] "GET / HTTP/1.1" 200 72872
+[07/Oct/2025 01:33:06] "GET /static/sw.js HTTP/1.1" 404 1942
+[07/Oct/2025 01:33:06] "GET /status/ HTTP/1.1" 200 263
+[07/Oct/2025 01:33:07] "GET / HTTP/1.1" 200 72872
+[07/Oct/2025 01:33:07] "GET /static/sw.js HTTP/1.1" 404 1942
+[07/Oct/2025 01:33:07] "GET /status/ HTTP/1.1" 200 263
+[07/Oct/2025 01:33:08] "GET / HTTP/1.1" 200 72872
+[07/Oct/2025 01:33:08] "GET /static/sw.js HTTP/1.1" 404 1942
+[07/Oct/2025 01:33:08] "GET /status/ HTTP/1.1" 200 263
+[07/Oct/2025 01:33:08] "GET / HTTP/1.1" 200 72872
+[07/Oct/2025 01:33:08] "GET /static/sw.js HTTP/1.1" 404 1942
+[07/Oct/2025 01:33:08] "GET /status/ HTTP/1.1" 200 263
+[07/Oct/2025 01:33:09] "GET / HTTP/1.1" 200 72872
+[07/Oct/2025 01:33:09] "GET /static/sw.js HTTP/1.1" 404 1942
+[07/Oct/2025 01:33:09] "GET /status/ HTTP/1.1" 200 263
+[07/Oct/2025 01:33:10] "GET / HTTP/1.1" 200 72872
+[07/Oct/2025 01:33:10] "GET /static/sw.js HTTP/1.1" 404 1942
+[07/Oct/2025 01:33:10] "GET /status/ HTTP/1.1" 200 263
+[07/Oct/2025 01:33:11] "GET / HTTP/1.1" 200 72872
+[07/Oct/2025 01:33:11] "GET /static/sw.js HTTP/1.1" 404 1942
+[07/Oct/2025 01:33:11] "GET /status/ HTTP/1.1" 200 263
+[07/Oct/2025 01:33:11] "GET / HTTP/1.1" 200 72872
+[07/Oct/2025 01:33:11] "GET /static/sw.js HTTP/1.1" 404 1942
+[07/Oct/2025 01:33:11] "GET /status/ HTTP/1.1" 200 263
+[07/Oct/2025 01:33:11] "GET / HTTP/1.1" 200 72872
+[07/Oct/2025 01:33:11] "GET /static/sw.js HTTP/1.1" 404 1942
+[07/Oct/2025 01:33:11] "GET /status/ HTTP/1.1" 200 263
+[07/Oct/2025 01:33:12] "GET / HTTP/1.1" 200 72872
+[07/Oct/2025 01:33:12] "GET /static/sw.js HTTP/1.1" 404 1942
+[07/Oct/2025 01:33:12] "GET /status/ HTTP/1.1" 200 263
+[07/Oct/2025 01:33:12] "GET / HTTP/1.1" 200 72872
+[07/Oct/2025 01:33:12] "GET /static/sw.js HTTP/1.1" 404 1942
+[07/Oct/2025 01:33:12] "GET /status/ HTTP/1.1" 200 263
+D:\Codes\sack\resource_manager\views.py changed, reloading.
+Performing system checks...
+
+October 07, 2025 - 01:27:25
+Django version 5.2.7, using settings 'sack_tool.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CTRL-BREAK.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+Watching for file changes with StatReloader
+System check identified some issues:
+
+WARNINGS:
+?: (staticfiles.W004) The directory 'D:\Codes\sack\static' in the STATICFILES_DIRS setting does not exist.
+
+System check identified 1 issue (0 silenced).
+[07/Oct/2025 01:33:42] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:34:12] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:34:13] "GET / HTTP/1.1" 200 72707
+[07/Oct/2025 01:34:13] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:34:13] "GET /static/sw.js HTTP/1.1" 200 695
+D:\Codes\sack\resource_manager\views.py changed, reloading.
+Performing system checks...
+
+October 07, 2025 - 01:33:14
+Django version 5.2.7, using settings 'sack_tool.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CTRL-BREAK.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+Watching for file changes with StatReloader
+[07/Oct/2025 01:34:43] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:34:44] "GET / HTTP/1.1" 200 72707
+[07/Oct/2025 01:34:44] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:35:14] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:35:44] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:35:44] "GET / HTTP/1.1" 200 72707
+[07/Oct/2025 01:35:44] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:36:14] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:36:44] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:36:44] "GET / HTTP/1.1" 200 72707
+[07/Oct/2025 01:36:44] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:37:14] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:37:30] "GET / HTTP/1.1" 200 73579
+[07/Oct/2025 01:37:30] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:37:50] "GET / HTTP/1.1" 200 73579
+[07/Oct/2025 01:37:50] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:37:51] "GET / HTTP/1.1" 200 73579
+[07/Oct/2025 01:37:51] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:37:51] "GET / HTTP/1.1" 200 73579
+[07/Oct/2025 01:37:51] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:37:52] "GET / HTTP/1.1" 200 73579
+[07/Oct/2025 01:37:52] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:37:52] "GET / HTTP/1.1" 200 73579
+[07/Oct/2025 01:37:53] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:38:02] "GET /logout/ HTTP/1.1" 302 0
+[07/Oct/2025 01:38:02] "GET /login/ HTTP/1.1" 200 40710
+[07/Oct/2025 01:38:02] "GET /status/ HTTP/1.1" 302 0
+[07/Oct/2025 01:38:02] "GET /login/?next=/status/ HTTP/1.1" 200 38760
+[07/Oct/2025 01:38:19] "POST /login/ HTTP/1.1" 302 0
+[07/Oct/2025 01:38:19] "GET / HTTP/1.1" 200 73003
+[07/Oct/2025 01:38:19] "GET /status/ HTTP/1.1" 200 2810
+[07/Oct/2025 01:38:49] "GET /status/ HTTP/1.1" 200 2810
+[07/Oct/2025 01:39:19] "GET /status/ HTTP/1.1" 200 2810
+[07/Oct/2025 01:39:19] "GET / HTTP/1.1" 200 73003
+[07/Oct/2025 01:39:19] "GET /status/ HTTP/1.1" 200 2810
+[07/Oct/2025 01:39:25] "GET / HTTP/1.1" 200 73003
+[07/Oct/2025 01:39:25] "GET /status/ HTTP/1.1" 200 2810
+[07/Oct/2025 01:39:26] "POST /join-queue/ HTTP/1.1" 200 57
+[07/Oct/2025 01:39:27] "GET / HTTP/1.1" 200 73438
+[07/Oct/2025 01:39:27] "GET /status/ HTTP/1.1" 200 2817
+[07/Oct/2025 01:39:31] "POST /leave-queue/ HTTP/1.1" 200 55
+[07/Oct/2025 01:39:32] "GET / HTTP/1.1" 200 73119
+[07/Oct/2025 01:39:32] "GET /status/ HTTP/1.1" 200 2810
+[07/Oct/2025 01:40:02] "GET /status/ HTTP/1.1" 200 2810
+[07/Oct/2025 01:40:32] "GET / HTTP/1.1" 200 73119
+[07/Oct/2025 01:40:32,611] - Broken pipe from ('127.0.0.1', 55374)
+[07/Oct/2025 01:40:32] "GET /status/ HTTP/1.1" 200 2810
+[07/Oct/2025 01:41:02] "GET /status/ HTTP/1.1" 200 2810
+[07/Oct/2025 01:41:23] "GET / HTTP/1.1" 200 73235
+[07/Oct/2025 01:41:23] "GET /status/ HTTP/1.1" 200 2810
+[07/Oct/2025 01:41:24] "GET / HTTP/1.1" 200 73235
+[07/Oct/2025 01:41:24] "GET /status/ HTTP/1.1" 200 2810
+[07/Oct/2025 01:41:25] "GET / HTTP/1.1" 200 73235
+[07/Oct/2025 01:41:25] "GET /status/ HTTP/1.1" 200 2810
+[07/Oct/2025 01:41:26] "GET /login/ HTTP/1.1" 302 0
+[07/Oct/2025 01:41:26] "GET / HTTP/1.1" 200 73235
+[07/Oct/2025 01:41:26,647] - Broken pipe from ('127.0.0.1', 60688)
+[07/Oct/2025 01:41:26] "GET /status/ HTTP/1.1" 200 2810
+[07/Oct/2025 01:41:27] "GET /status/ HTTP/1.1" 200 2810
+[07/Oct/2025 01:41:27] "GET / HTTP/1.1" 200 73235
+[07/Oct/2025 01:41:27] "GET /status/ HTTP/1.1" 200 2810
+[07/Oct/2025 01:41:29] "GET /logout/ HTTP/1.1" 302 0
+[07/Oct/2025 01:41:29] "GET /login/ HTTP/1.1" 200 40411
+[07/Oct/2025 01:41:29] "GET /status/ HTTP/1.1" 302 0
+[07/Oct/2025 01:41:29] "GET /login/?next=/status/ HTTP/1.1" 200 38931
+[07/Oct/2025 01:41:37] "POST /login/ HTTP/1.1" 302 0
+[07/Oct/2025 01:41:37] "GET / HTTP/1.1" 200 75187
+[07/Oct/2025 01:41:37] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:42:07] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:42:37] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:42:54] "POST /extend-time/ HTTP/1.1" 200 87
+[07/Oct/2025 01:42:55] "GET / HTTP/1.1" 200 75187
+[07/Oct/2025 01:42:55] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:43:25] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:43:29] "GET /admin/ HTTP/1.1" 200 10073
+[07/Oct/2025 01:43:29] "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+[07/Oct/2025 01:43:29] "GET /static/admin/css/base.css HTTP/1.1" 304 0
+[07/Oct/2025 01:43:29] "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+[07/Oct/2025 01:43:29] "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+[07/Oct/2025 01:43:29] "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+[07/Oct/2025 01:43:29] "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+[07/Oct/2025 01:43:29] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+[07/Oct/2025 01:43:29] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+[07/Oct/2025 01:43:29] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+[07/Oct/2025 01:43:32] "GET /admin/resource_manager/resourcequeue/ HTTP/1.1" 200 17301
+[07/Oct/2025 01:43:32] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[07/Oct/2025 01:43:32] "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+[07/Oct/2025 01:43:32] "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+[07/Oct/2025 01:43:32] "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+[07/Oct/2025 01:43:32] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+[07/Oct/2025 01:43:32] "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+[07/Oct/2025 01:43:32] "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+[07/Oct/2025 01:43:32] "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+[07/Oct/2025 01:43:32] "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+[07/Oct/2025 01:43:32] "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+[07/Oct/2025 01:43:32] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9777
+[07/Oct/2025 01:43:32] "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+[07/Oct/2025 01:43:32] "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+[07/Oct/2025 01:43:32] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+[07/Oct/2025 01:43:32] "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+[07/Oct/2025 01:43:32] "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+[07/Oct/2025 01:43:32] "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+[07/Oct/2025 01:43:38] "GET /admin/resource_manager/resourceusage/ HTTP/1.1" 200 19786
+[07/Oct/2025 01:43:38] "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[07/Oct/2025 01:43:52] "GET /admin/ HTTP/1.1" 200 10073
+[07/Oct/2025 01:43:54] "GET /admin/ HTTP/1.1" 200 10073
+[07/Oct/2025 01:43:55] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:43:57] "GET / HTTP/1.1" 200 75187
+[07/Oct/2025 01:43:57] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:44:25] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:44:27] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:44:55] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:44:57] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:45:25] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:45:27] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:45:55] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:45:57] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:46:14] "GET / HTTP/1.1" 200 78965
+[07/Oct/2025 01:46:14] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:46:44] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:47:06] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:47:14] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:47:44] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:48:06] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:48:14] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:48:44] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:49:06] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:49:14] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:49:44] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:50:06] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:50:14] "GET /status/ HTTP/1.1" 200 2807
+D:\Codes\sack\resource_manager\models.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+October 07, 2025 - 01:34:29
+Django version 5.2.7, using settings 'sack_tool.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CTRL-BREAK.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+Watching for file changes with StatReloader
+D:\Codes\sack\resource_manager\models.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+October 07, 2025 - 01:50:23
+Django version 5.2.7, using settings 'sack_tool.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CTRL-BREAK.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+Watching for file changes with StatReloader
+[07/Oct/2025 01:50:44] "GET /status/ HTTP/1.1" 200 2807
+D:\Codes\sack\resource_manager\urls.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+October 07, 2025 - 01:50:29
+Django version 5.2.7, using settings 'sack_tool.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CTRL-BREAK.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+Watching for file changes with StatReloader
+[07/Oct/2025 01:51:06] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:51:14] "GET /status/ HTTP/1.1" 200 2807
+D:\Codes\sack\resource_manager\urls.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+October 07, 2025 - 01:50:51
+Django version 5.2.7, using settings 'sack_tool.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CTRL-BREAK.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+Watching for file changes with StatReloader
+[07/Oct/2025 01:51:39] "GET / HTTP/1.1" 200 80171
+[07/Oct/2025 01:51:39] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 01:51:39] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:51:40] "GET / HTTP/1.1" 200 80171
+[07/Oct/2025 01:51:40] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 01:51:40] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:51:40] "GET / HTTP/1.1" 200 80171
+[07/Oct/2025 01:51:40] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 01:51:40] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:51:48] "GET / HTTP/1.1" 200 80171
+[07/Oct/2025 01:51:48] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 01:51:48] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:51:49] "GET / HTTP/1.1" 200 80171
+[07/Oct/2025 01:51:49] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 01:51:49] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:51:50] "GET / HTTP/1.1" 200 80171
+[07/Oct/2025 01:51:50] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 01:51:50] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:51:51] "GET / HTTP/1.1" 200 80171
+[07/Oct/2025 01:51:51] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 01:51:51] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:51:55] "POST /theme/set/ HTTP/1.1" 200 34
+[07/Oct/2025 01:52:00] "POST /theme/set/ HTTP/1.1" 200 35
+[07/Oct/2025 01:52:06] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:52:10] "GET / HTTP/1.1" 200 80171
+[07/Oct/2025 01:52:10] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 01:52:10] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:52:15] "POST /theme/set/ HTTP/1.1" 200 34
+[07/Oct/2025 01:52:23] "POST /theme/set/ HTTP/1.1" 200 35
+[07/Oct/2025 01:52:40] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:53:06] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:53:10] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:53:40] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:54:06] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:54:10] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:54:14] "GET / HTTP/1.1" 200 80326
+[07/Oct/2025 01:54:14] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 01:54:14] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:54:15] "GET / HTTP/1.1" 200 80326
+[07/Oct/2025 01:54:15] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 01:54:15] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:54:16] "GET / HTTP/1.1" 200 80326
+[07/Oct/2025 01:54:16] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 01:54:16] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:54:17] "GET / HTTP/1.1" 200 80326
+[07/Oct/2025 01:54:17] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 01:54:17] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:54:22] "GET / HTTP/1.1" 200 80326
+[07/Oct/2025 01:54:22] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 01:54:22] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:54:23] "GET / HTTP/1.1" 200 80326
+[07/Oct/2025 01:54:23] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 01:54:23] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:54:23] "GET / HTTP/1.1" 200 80326
+[07/Oct/2025 01:54:23] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 01:54:23] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:54:24] "GET / HTTP/1.1" 200 80326
+[07/Oct/2025 01:54:24] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 01:54:24] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:54:24] "GET / HTTP/1.1" 200 80326
+[07/Oct/2025 01:54:24] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 01:54:25] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:54:30] "POST /theme/set/ HTTP/1.1" 200 34
+[07/Oct/2025 01:54:46] "POST /theme/set/ HTTP/1.1" 200 35
+[07/Oct/2025 01:54:54] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:55:06] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:55:24] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:55:46] "GET / HTTP/1.1" 200 80557
+[07/Oct/2025 01:55:46] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 01:55:46] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:55:47] "GET / HTTP/1.1" 200 80557
+[07/Oct/2025 01:55:47] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 01:55:47] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:55:48] "GET / HTTP/1.1" 200 80557
+[07/Oct/2025 01:55:48] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 01:55:48] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:55:49] "GET / HTTP/1.1" 200 80557
+[07/Oct/2025 01:55:49] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 01:55:49] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:55:56] "GET / HTTP/1.1" 200 80326
+[07/Oct/2025 01:55:56] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 01:55:56] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:55:57] "GET / HTTP/1.1" 200 80326
+[07/Oct/2025 01:55:57] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 01:55:57] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:55:58] "GET / HTTP/1.1" 200 80326
+[07/Oct/2025 01:55:58] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 01:55:58] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:56:06] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:56:28] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:56:58] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:57:06] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:57:27] "GET / HTTP/1.1" 200 80673
+[07/Oct/2025 01:57:27] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 01:57:27] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:57:28] "GET / HTTP/1.1" 200 80673
+[07/Oct/2025 01:57:28] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 01:57:28] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:57:43] "POST /theme/set/ HTTP/1.1" 200 34
+[07/Oct/2025 01:57:53] "POST /theme/set/ HTTP/1.1" 200 35
+[07/Oct/2025 01:57:58] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:58:06] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:58:09] "POST /theme/set/ HTTP/1.1" 200 34
+[07/Oct/2025 01:58:15] "POST /theme/set/ HTTP/1.1" 200 35
+[07/Oct/2025 01:58:28] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:58:58] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:59:06] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:59:28] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 01:59:58] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 02:00:06] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 02:00:28] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 02:00:58] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 02:01:06] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 02:01:14] "GET / HTTP/1.1" 200 81426
+[07/Oct/2025 02:01:14] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 02:01:14] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 02:01:44] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 02:02:06] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 02:02:14] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 02:02:44] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 02:03:06] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 02:03:14] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 02:03:21] "GET / HTTP/1.1" 200 81412
+[07/Oct/2025 02:03:21] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 02:03:21] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 02:03:51] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 02:03:59] "GET / HTTP/1.1" 200 81412
+[07/Oct/2025 02:03:59] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 02:03:59] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 02:04:04] "POST /theme/set/ HTTP/1.1" 200 34
+[07/Oct/2025 02:04:06] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 02:04:16] "POST /theme/set/ HTTP/1.1" 200 35
+[07/Oct/2025 02:04:29] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 02:04:59] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 02:05:06] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 02:05:20] "GET / HTTP/1.1" 200 81595
+[07/Oct/2025 02:05:20] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 02:05:20] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 02:05:33] "GET /logout/ HTTP/1.1" 302 0
+[07/Oct/2025 02:05:33] "GET /login/ HTTP/1.1" 200 45662
+[07/Oct/2025 02:05:33] "GET /theme/get/ HTTP/1.1" 302 0
+[07/Oct/2025 02:05:33] "GET /status/ HTTP/1.1" 302 0
+[07/Oct/2025 02:05:33] "GET /login/?next=/theme/get/ HTTP/1.1" 200 45148
+[07/Oct/2025 02:05:33] "GET /login/?next=/status/ HTTP/1.1" 200 45148
+[07/Oct/2025 02:05:49] "POST /login/ HTTP/1.1" 302 0
+[07/Oct/2025 02:05:49] "GET / HTTP/1.1" 200 79649
+[07/Oct/2025 02:05:50] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 02:05:50] "GET /status/ HTTP/1.1" 200 2810
+[07/Oct/2025 02:05:56] "POST /join-queue/ HTTP/1.1" 200 57
+[07/Oct/2025 02:05:57] "GET / HTTP/1.1" 200 80078
+[07/Oct/2025 02:05:57] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 02:05:57] "GET /status/ HTTP/1.1" 200 2817
+[07/Oct/2025 02:06:01] "POST /leave-queue/ HTTP/1.1" 200 183
+[07/Oct/2025 02:06:06] "GET /status/ HTTP/1.1" 200 2817
+[07/Oct/2025 02:06:07] "POST /leave-queue/ HTTP/1.1" 200 183
+[07/Oct/2025 02:06:27] "GET /status/ HTTP/1.1" 200 2817
+[07/Oct/2025 02:06:50] "GET / HTTP/1.1" 200 80078
+[07/Oct/2025 02:06:50] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 02:06:50] "GET /status/ HTTP/1.1" 200 2817
+Not Found: /favicon.ico
+[07/Oct/2025 02:06:50] "GET /favicon.ico HTTP/1.1" 404 5413
+[07/Oct/2025 02:07:06] "GET /status/ HTTP/1.1" 200 2817
+[07/Oct/2025 02:07:20] "GET /status/ HTTP/1.1" 200 2817
+[07/Oct/2025 02:07:50] "GET /status/ HTTP/1.1" 200 2817
+[07/Oct/2025 02:07:52] "GET / HTTP/1.1" 200 80793
+[07/Oct/2025 02:07:52] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 02:07:52] "GET /status/ HTTP/1.1" 200 2817
+[07/Oct/2025 02:07:53] "GET / HTTP/1.1" 200 80793
+[07/Oct/2025 02:07:53] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 02:07:53] "GET /status/ HTTP/1.1" 200 2817
+[07/Oct/2025 02:08:06] "GET / HTTP/1.1" 200 80793
+[07/Oct/2025 02:08:06] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 02:08:06] "GET /status/ HTTP/1.1" 200 2817
+[07/Oct/2025 02:08:06] "GET /status/ HTTP/1.1" 200 2817
+[07/Oct/2025 02:08:07] "GET / HTTP/1.1" 200 80793
+[07/Oct/2025 02:08:07] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 02:08:07] "GET /status/ HTTP/1.1" 200 2817
+[07/Oct/2025 02:08:08] "GET / HTTP/1.1" 200 80793
+[07/Oct/2025 02:08:08] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 02:08:08] "GET /status/ HTTP/1.1" 200 2817
+[07/Oct/2025 02:08:08] "GET / HTTP/1.1" 200 80793
+[07/Oct/2025 02:08:08] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 02:08:08] "GET /status/ HTTP/1.1" 200 2817
+[07/Oct/2025 02:08:09] "GET / HTTP/1.1" 200 80793
+[07/Oct/2025 02:08:09] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 02:08:09] "GET /status/ HTTP/1.1" 200 2817
+[07/Oct/2025 02:08:09] "GET / HTTP/1.1" 200 80793
+[07/Oct/2025 02:08:09] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 02:08:09] "GET /status/ HTTP/1.1" 200 2817
+[07/Oct/2025 02:08:09] "GET / HTTP/1.1" 200 80793
+[07/Oct/2025 02:08:09] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 02:08:09] "GET /status/ HTTP/1.1" 200 2817
+[07/Oct/2025 02:08:10] "GET / HTTP/1.1" 200 80793
+[07/Oct/2025 02:08:10] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 02:08:10] "GET /status/ HTTP/1.1" 200 2817
+[07/Oct/2025 02:08:10] "GET / HTTP/1.1" 200 80793
+[07/Oct/2025 02:08:10] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 02:08:10] "GET /status/ HTTP/1.1" 200 2817
+[07/Oct/2025 02:08:40] "GET /status/ HTTP/1.1" 200 2817
+[07/Oct/2025 02:08:54] "GET / HTTP/1.1" 302 0
+[07/Oct/2025 02:08:54] "GET /login/?next=/ HTTP/1.1" 200 45863
+[07/Oct/2025 02:08:54] "GET /status/ HTTP/1.1" 302 0
+[07/Oct/2025 02:08:54] "GET /theme/get/ HTTP/1.1" 302 0
+[07/Oct/2025 02:08:54] "GET /login/?next=/theme/get/ HTTP/1.1" 200 45863
+[07/Oct/2025 02:08:54] "GET /login/?next=/status/ HTTP/1.1" 200 45863
+[07/Oct/2025 02:08:54] "GET /static/sw.js HTTP/1.1" 200 695
+Not Found: /favicon.ico
+[07/Oct/2025 02:08:54] "GET /favicon.ico HTTP/1.1" 404 5413
+[07/Oct/2025 02:09:06] "GET /status/ HTTP/1.1" 200 2816
+[07/Oct/2025 02:09:10] "GET /status/ HTTP/1.1" 200 2816
+[07/Oct/2025 02:09:11] "POST /login/?next=/ HTTP/1.1" 302 0
+[07/Oct/2025 02:09:11] "GET / HTTP/1.1" 200 81431
+[07/Oct/2025 02:09:11] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 02:09:11] "GET /status/ HTTP/1.1" 200 2816
+[07/Oct/2025 02:09:35] "GET / HTTP/1.1" 200 81699
+[07/Oct/2025 02:09:35] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 02:09:35] "GET /status/ HTTP/1.1" 200 2816
+[07/Oct/2025 02:09:38] "GET / HTTP/1.1" 200 81699
+[07/Oct/2025 02:09:38] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 02:09:38] "GET /status/ HTTP/1.1" 200 2816
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[07/Oct/2025 02:09:58] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5524
+[07/Oct/2025 02:10:05] "GET /status/ HTTP/1.1" 200 2816
+[07/Oct/2025 02:10:06] "GET /status/ HTTP/1.1" 200 2816
+[07/Oct/2025 02:10:08] "GET /status/ HTTP/1.1" 200 2816
+[07/Oct/2025 02:10:35] "GET /status/ HTTP/1.1" 200 2816
+[07/Oct/2025 02:10:38] "GET /status/ HTTP/1.1" 200 2816
+[07/Oct/2025 02:11:05] "GET /status/ HTTP/1.1" 200 2816
+[07/Oct/2025 02:11:06] "GET /status/ HTTP/1.1" 200 2816
+[07/Oct/2025 02:11:08] "GET /status/ HTTP/1.1" 200 2816
+[07/Oct/2025 02:11:35] "GET /status/ HTTP/1.1" 200 2816
+[07/Oct/2025 02:11:38] "GET /status/ HTTP/1.1" 200 2816
+[07/Oct/2025 02:12:05] "GET /status/ HTTP/1.1" 200 2816
+[07/Oct/2025 02:12:06] "GET /status/ HTTP/1.1" 200 2816
+[07/Oct/2025 02:12:08] "GET /status/ HTTP/1.1" 200 2816
+[07/Oct/2025 02:12:35] "GET /status/ HTTP/1.1" 200 2815
+[07/Oct/2025 02:12:38] "GET /status/ HTTP/1.1" 200 2815
+[07/Oct/2025 02:13:06] "GET /status/ HTTP/1.1" 200 2815
+[07/Oct/2025 02:13:06] "GET /status/ HTTP/1.1" 200 2815
+[07/Oct/2025 02:13:08] "GET /status/ HTTP/1.1" 200 2815
+[07/Oct/2025 02:13:24] "GET / HTTP/1.1" 200 82525
+[07/Oct/2025 02:13:24] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 02:13:24] "GET /status/ HTTP/1.1" 200 2815
+[07/Oct/2025 02:13:54] "GET /status/ HTTP/1.1" 200 2815
+[07/Oct/2025 02:14:02] "GET / HTTP/1.1" 200 82525
+[07/Oct/2025 02:14:02] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 02:14:02] "GET /status/ HTTP/1.1" 200 2815
+Not Found: /favicon.ico
+[07/Oct/2025 02:14:02] "GET /favicon.ico HTTP/1.1" 404 5413
+[07/Oct/2025 02:14:06] "GET /status/ HTTP/1.1" 200 2815
+[07/Oct/2025 02:14:07] "GET /status/ HTTP/1.1" 200 2815
+[07/Oct/2025 02:14:32] "GET /status/ HTTP/1.1" 200 2815
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[07/Oct/2025 02:14:48] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5524
+[07/Oct/2025 02:15:02] "GET /status/ HTTP/1.1" 200 2815
+[07/Oct/2025 02:15:06] "GET /status/ HTTP/1.1" 200 2815
+[07/Oct/2025 02:15:07] "GET /status/ HTTP/1.1" 200 2815
+[07/Oct/2025 02:15:32] "GET /status/ HTTP/1.1" 200 2815
+[07/Oct/2025 02:15:45] "GET / HTTP/1.1" 200 82525
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[07/Oct/2025 02:15:45] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5524
+[07/Oct/2025 02:15:45] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 02:15:45] "GET /status/ HTTP/1.1" 200 2815
+[07/Oct/2025 02:16:06] "GET /status/ HTTP/1.1" 200 2815
+[07/Oct/2025 02:16:07] "GET /status/ HTTP/1.1" 200 2815
+[07/Oct/2025 02:16:15] "GET /status/ HTTP/1.1" 200 2815
+[07/Oct/2025 02:16:45] "GET /status/ HTTP/1.1" 200 2815
+[07/Oct/2025 02:17:06] "GET /status/ HTTP/1.1" 200 2815
+[07/Oct/2025 02:17:07] "GET /status/ HTTP/1.1" 200 2815
+[07/Oct/2025 02:17:15] "GET /status/ HTTP/1.1" 200 2815
+[07/Oct/2025 02:17:22] "GET / HTTP/1.1" 200 83352
+[07/Oct/2025 02:17:22] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 02:17:23] "GET /status/ HTTP/1.1" 200 2815
+[07/Oct/2025 02:17:37] "POST /leave-queue/ HTTP/1.1" 200 183
+[07/Oct/2025 02:17:48] "POST /leave-queue/ HTTP/1.1" 200 183
+[07/Oct/2025 02:17:53] "GET /status/ HTTP/1.1" 200 2815
+[07/Oct/2025 02:18:06] "GET /status/ HTTP/1.1" 200 2815
+[07/Oct/2025 02:18:07] "GET /status/ HTTP/1.1" 200 2815
+[07/Oct/2025 02:18:23] "GET /status/ HTTP/1.1" 200 2815
+[07/Oct/2025 02:18:53] "GET /status/ HTTP/1.1" 200 2815
+[07/Oct/2025 02:19:06] "GET /status/ HTTP/1.1" 200 2815
+[07/Oct/2025 02:19:06] "GET /status/ HTTP/1.1" 200 2815
+[07/Oct/2025 02:19:23] "GET /status/ HTTP/1.1" 200 2815
+[07/Oct/2025 02:19:53] "GET /status/ HTTP/1.1" 200 2815
+[07/Oct/2025 02:20:06] "GET /status/ HTTP/1.1" 200 2815
+[07/Oct/2025 02:20:07] "GET /status/ HTTP/1.1" 200 2815
+D:\Codes\sack\resource_manager\views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+October 07, 2025 - 01:51:38
+Django version 5.2.7, using settings 'sack_tool.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CTRL-BREAK.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+Watching for file changes with StatReloader
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "C:\Users\Omkar\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "C:\Users\Omkar\AppData\Local\Programs\Python\Python310\lib\threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\utils\autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\core\management\commands\runserver.py", line 134, in inner_run
+    self.check(**check_kwargs)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\core\management\base.py", line 492, in check
+    all_issues = checks.run_checks(
+  File "D:\Codes\sack\.venv\lib\site-packages\django\core\checks\registry.py", line 89, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\core\checks\urls.py", line 136, in check_custom_error_handlers
+    handler = resolver.resolve_error_handler(status_code)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\urls\resolvers.py", line 732, in resolve_error_handler
+    callback = getattr(self.urlconf_module, "handler%s" % view_type, None)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "D:\Codes\sack\.venv\lib\site-packages\django\urls\resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "C:\Users\Omkar\AppData\Local\Programs\Python\Python310\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "D:\Codes\sack\sack_tool\urls.py", line 9, in <module>
+    path('', include('resource_manager.urls')),
+  File "D:\Codes\sack\.venv\lib\site-packages\django\urls\conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "C:\Users\Omkar\AppData\Local\Programs\Python\Python310\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "D:\Codes\sack\resource_manager\urls.py", line 3, in <module>
+    from . import views
+  File "D:\Codes\sack\resource_manager\views.py", line 251
+    queue_entry.update_estimated_wait_time()
+    ^^^^^^^^^^^
+SyntaxError: expected 'except' or 'finally' block
+D:\Codes\sack\resource_manager\views.py changed, reloading.
+Performing system checks...
+
+Watching for file changes with StatReloader
+[07/Oct/2025 02:20:53] "GET /status/ HTTP/1.1" 200 2815
+[07/Oct/2025 02:21:06] "GET /status/ HTTP/1.1" 200 2815
+[07/Oct/2025 02:21:06] "GET /status/ HTTP/1.1" 200 2815
+D:\Codes\sack\resource_manager\views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+October 07, 2025 - 02:20:45
+Django version 5.2.7, using settings 'sack_tool.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CTRL-BREAK.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+Watching for file changes with StatReloader
+[07/Oct/2025 02:21:23] "GET /status/ HTTP/1.1" 200 2815
+[07/Oct/2025 02:21:53] "GET /status/ HTTP/1.1" 200 2815
+D:\Codes\sack\resource_manager\views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+October 07, 2025 - 02:21:18
+Django version 5.2.7, using settings 'sack_tool.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CTRL-BREAK.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+Watching for file changes with StatReloader
+[07/Oct/2025 02:21:59] "GET / HTTP/1.1" 200 83352
+[07/Oct/2025 02:21:59] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 02:21:59] "GET /status/ HTTP/1.1" 200 2815
+[07/Oct/2025 02:22:02] "POST /leave-queue/ HTTP/1.1" 200 55
+[07/Oct/2025 02:22:03] "GET / HTTP/1.1" 200 82923
+[07/Oct/2025 02:22:03] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 02:22:03] "GET /status/ HTTP/1.1" 200 2808
+[07/Oct/2025 02:22:06] "GET /status/ HTTP/1.1" 200 2808
+[07/Oct/2025 02:22:07] "GET /status/ HTTP/1.1" 200 2808
+[07/Oct/2025 02:22:12] "GET /logout/ HTTP/1.1" 302 0
+[07/Oct/2025 02:22:12] "GET /login/ HTTP/1.1" 200 49079
+[07/Oct/2025 02:22:12] "GET /status/ HTTP/1.1" 302 0
+[07/Oct/2025 02:22:12] "GET /theme/get/ HTTP/1.1" 302 0
+[07/Oct/2025 02:22:12] "GET /login/?next=/status/ HTTP/1.1" 200 47599
+[07/Oct/2025 02:22:12] "GET /login/?next=/theme/get/ HTTP/1.1" 200 47599
+[07/Oct/2025 02:22:42] "GET /status/ HTTP/1.1" 302 0
+[07/Oct/2025 02:22:42] "GET /login/?next=/status/ HTTP/1.1" 200 47599
+[07/Oct/2025 02:23:06] "GET /status/ HTTP/1.1" 302 0
+[07/Oct/2025 02:23:06] "GET /login/?next=/status/ HTTP/1.1" 200 47599
+[07/Oct/2025 02:23:06] "GET /status/ HTTP/1.1" 200 2808
+[07/Oct/2025 02:23:12] "GET /status/ HTTP/1.1" 302 0
+[07/Oct/2025 02:23:12] "GET /login/?next=/status/ HTTP/1.1" 200 47599
+[07/Oct/2025 02:23:42] "GET /status/ HTTP/1.1" 302 0
+[07/Oct/2025 02:23:42] "GET /login/?next=/status/ HTTP/1.1" 200 47599
+[07/Oct/2025 02:23:49] "GET / HTTP/1.1" 302 0
+[07/Oct/2025 02:23:49] "GET /login/?next=/ HTTP/1.1" 200 47599
+[07/Oct/2025 02:23:49] "GET /status/ HTTP/1.1" 302 0
+[07/Oct/2025 02:23:49] "GET /theme/get/ HTTP/1.1" 302 0
+[07/Oct/2025 02:23:49] "GET /login/?next=/status/ HTTP/1.1" 200 47599
+[07/Oct/2025 02:23:49] "GET /login/?next=/theme/get/ HTTP/1.1" 200 47599
+[07/Oct/2025 02:23:49] "GET / HTTP/1.1" 302 0
+[07/Oct/2025 02:23:49] "GET /login/?next=/ HTTP/1.1" 200 47599
+[07/Oct/2025 02:23:49] "GET /status/ HTTP/1.1" 302 0
+[07/Oct/2025 02:23:49] "GET /theme/get/ HTTP/1.1" 302 0
+[07/Oct/2025 02:23:49] "GET /login/?next=/status/ HTTP/1.1" 200 47599
+[07/Oct/2025 02:23:49] "GET /login/?next=/theme/get/ HTTP/1.1" 200 47599
+[07/Oct/2025 02:23:50] "GET / HTTP/1.1" 302 0
+[07/Oct/2025 02:23:50] "GET /login/?next=/ HTTP/1.1" 200 47599
+[07/Oct/2025 02:23:50] "GET /status/ HTTP/1.1" 302 0
+[07/Oct/2025 02:23:50] "GET /theme/get/ HTTP/1.1" 302 0
+[07/Oct/2025 02:23:50] "GET /login/?next=/status/ HTTP/1.1" 200 47599
+[07/Oct/2025 02:23:50] "GET /login/?next=/theme/get/ HTTP/1.1" 200 47599
+[07/Oct/2025 02:23:50] "GET / HTTP/1.1" 302 0
+[07/Oct/2025 02:23:50] "GET /login/?next=/ HTTP/1.1" 200 47599
+[07/Oct/2025 02:23:50] "GET /theme/get/ HTTP/1.1" 302 0
+[07/Oct/2025 02:23:50] "GET /status/ HTTP/1.1" 302 0
+[07/Oct/2025 02:23:50] "GET /login/?next=/theme/get/ HTTP/1.1" 200 47599
+[07/Oct/2025 02:23:50] "GET /login/?next=/status/ HTTP/1.1" 200 47599
+[07/Oct/2025 02:24:06] "GET /status/ HTTP/1.1" 302 0
+[07/Oct/2025 02:24:06] "GET /login/?next=/status/ HTTP/1.1" 200 47599
+[07/Oct/2025 02:24:06] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 02:24:20] "GET /status/ HTTP/1.1" 302 0
+[07/Oct/2025 02:24:20] "GET /login/?next=/status/ HTTP/1.1" 200 47599
+[07/Oct/2025 02:24:50] "GET /status/ HTTP/1.1" 302 0
+[07/Oct/2025 02:24:50] "GET /login/?next=/status/ HTTP/1.1" 200 47599
+[07/Oct/2025 02:25:02] "GET /login/?next=/ HTTP/1.1" 200 48662
+[07/Oct/2025 02:25:02] "GET /status/ HTTP/1.1" 302 0
+[07/Oct/2025 02:25:02] "GET /theme/get/ HTTP/1.1" 302 0
+[07/Oct/2025 02:25:02] "GET /login/?next=/status/ HTTP/1.1" 200 48662
+[07/Oct/2025 02:25:02] "GET /login/?next=/theme/get/ HTTP/1.1" 200 48662
+[07/Oct/2025 02:25:06] "GET /status/ HTTP/1.1" 302 0
+[07/Oct/2025 02:25:06] "GET /login/?next=/status/ HTTP/1.1" 200 48662
+[07/Oct/2025 02:25:06] "GET /status/ HTTP/1.1" 200 2807
+[07/Oct/2025 02:25:32] "GET /status/ HTTP/1.1" 302 0
+[07/Oct/2025 02:25:32] "GET /login/?next=/status/ HTTP/1.1" 200 49540
+[07/Oct/2025 02:25:32] "GET /login/?next=/ HTTP/1.1" 200 49540
+[07/Oct/2025 02:25:32] "GET /status/ HTTP/1.1" 302 0
+[07/Oct/2025 02:25:32] "GET /theme/get/ HTTP/1.1" 302 0
+[07/Oct/2025 02:25:32] "GET /login/?next=/theme/get/ HTTP/1.1" 200 49540
+[07/Oct/2025 02:25:32] "GET /login/?next=/status/ HTTP/1.1" 200 49540
+[07/Oct/2025 02:25:43] "POST /login/?next=/ HTTP/1.1" 302 0
+[07/Oct/2025 02:25:43] "GET / HTTP/1.1" 200 86004
+[07/Oct/2025 02:25:43] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 02:25:43] "GET /status/ HTTP/1.1" 200 2800
+[07/Oct/2025 02:25:48] "GET /status/ HTTP/1.1" 200 2802
+[07/Oct/2025 02:25:58] "POST /extend-time/ HTTP/1.1" 200 87
+[07/Oct/2025 02:25:59] "GET / HTTP/1.1" 200 86006
+[07/Oct/2025 02:25:59] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 02:25:59] "GET /status/ HTTP/1.1" 200 2801
+[07/Oct/2025 02:26:05] "GET /status/ HTTP/1.1" 200 2803
+[07/Oct/2025 02:26:06] "GET /status/ HTTP/1.1" 200 2801
+[07/Oct/2025 02:26:29] "GET /status/ HTTP/1.1" 200 2801
+[07/Oct/2025 02:26:35] "GET /status/ HTTP/1.1" 200 2803
+[07/Oct/2025 02:26:59] "GET /status/ HTTP/1.1" 200 2801
+[07/Oct/2025 02:27:06] "GET /status/ HTTP/1.1" 200 2803
+[07/Oct/2025 02:27:06] "GET /status/ HTTP/1.1" 200 2801
+[07/Oct/2025 02:27:29] "GET /status/ HTTP/1.1" 200 2800
+[07/Oct/2025 02:27:59] "GET /status/ HTTP/1.1" 200 2800
+[07/Oct/2025 02:28:06] "GET /status/ HTTP/1.1" 200 2802
+[07/Oct/2025 02:28:07] "GET /status/ HTTP/1.1" 200 2800
+[07/Oct/2025 02:28:29] "GET /status/ HTTP/1.1" 200 2800
+[07/Oct/2025 02:28:59] "GET /status/ HTTP/1.1" 200 2800
+[07/Oct/2025 02:29:07] "GET /status/ HTTP/1.1" 200 2800
+[07/Oct/2025 02:29:07] "GET /status/ HTTP/1.1" 200 2802
+[07/Oct/2025 02:29:29] "GET /status/ HTTP/1.1" 200 2800
+[07/Oct/2025 02:29:59] "GET /status/ HTTP/1.1" 200 2800
+[07/Oct/2025 02:30:07] "GET /status/ HTTP/1.1" 200 2802
+[07/Oct/2025 02:30:07] "GET /status/ HTTP/1.1" 200 2800
+[07/Oct/2025 02:30:29] "GET /status/ HTTP/1.1" 200 2800
+[07/Oct/2025 02:30:59] "GET /status/ HTTP/1.1" 200 2800
+[07/Oct/2025 02:31:04] "POST /occupy/ HTTP/1.1" 200 62
+[07/Oct/2025 02:31:05] "GET / HTTP/1.1" 200 86927
+[07/Oct/2025 02:31:05] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 02:31:05] "GET /status/ HTTP/1.1" 200 2841
+[07/Oct/2025 02:31:06] "GET /status/ HTTP/1.1" 200 2844
+[07/Oct/2025 02:31:07] "GET /status/ HTTP/1.1" 200 2841
+[07/Oct/2025 02:31:07] "POST /occupy/ HTTP/1.1" 200 62
+[07/Oct/2025 02:31:08] "GET / HTTP/1.1" 200 87850
+[07/Oct/2025 02:31:08] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 02:31:08] "GET /status/ HTTP/1.1" 200 2882
+[07/Oct/2025 02:31:10] "POST /occupy/ HTTP/1.1" 200 62
+[07/Oct/2025 02:31:11] "GET / HTTP/1.1" 200 88773
+[07/Oct/2025 02:31:11] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 02:31:11] "GET /status/ HTTP/1.1" 200 2923
+[07/Oct/2025 02:31:15] "POST /occupy/ HTTP/1.1" 200 62
+[07/Oct/2025 02:31:16] "GET / HTTP/1.1" 200 89696
+[07/Oct/2025 02:31:16] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 02:31:16] "GET /status/ HTTP/1.1" 200 2964
+[07/Oct/2025 02:31:18] "GET /logout/ HTTP/1.1" 302 0
+[07/Oct/2025 02:31:18] "GET /login/ HTTP/1.1" 200 51961
+[07/Oct/2025 02:31:18] "GET /theme/get/ HTTP/1.1" 302 0
+[07/Oct/2025 02:31:18] "GET /status/ HTTP/1.1" 302 0
+[07/Oct/2025 02:31:18] "GET /login/?next=/theme/get/ HTTP/1.1" 200 49540
+[07/Oct/2025 02:31:18] "GET /login/?next=/status/ HTTP/1.1" 200 49540
+[07/Oct/2025 02:31:29] "POST /login/ HTTP/1.1" 302 0
+[07/Oct/2025 02:31:29] "GET / HTTP/1.1" 200 87086
+[07/Oct/2025 02:31:29] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 02:31:29] "GET /status/ HTTP/1.1" 200 2968
+[07/Oct/2025 02:31:34] "POST /join-queue/ HTTP/1.1" 200 57
+[07/Oct/2025 02:31:35] "GET / HTTP/1.1" 200 88272
+[07/Oct/2025 02:31:35] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 02:31:35] "GET /status/ HTTP/1.1" 200 2973
+[07/Oct/2025 02:31:36] "POST /join-queue/ HTTP/1.1" 200 57
+[07/Oct/2025 02:31:37] "GET / HTTP/1.1" 200 89110
+[07/Oct/2025 02:31:37] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 02:31:37] "GET /status/ HTTP/1.1" 200 2978
+[07/Oct/2025 02:31:38] "POST /join-queue/ HTTP/1.1" 200 57
+[07/Oct/2025 02:31:39] "GET / HTTP/1.1" 200 89948
+[07/Oct/2025 02:31:39] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 02:31:39] "GET /status/ HTTP/1.1" 200 2983
+[07/Oct/2025 02:31:42] "POST /leave-queue/ HTTP/1.1" 200 55
+[07/Oct/2025 02:31:43] "GET / HTTP/1.1" 200 89110
+[07/Oct/2025 02:31:43] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 02:31:43] "GET /status/ HTTP/1.1" 200 2978
+[07/Oct/2025 02:31:46] "POST /leave-queue/ HTTP/1.1" 200 55
+[07/Oct/2025 02:31:48] "GET / HTTP/1.1" 200 87924
+[07/Oct/2025 02:31:48] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 02:31:48] "GET /status/ HTTP/1.1" 200 2973
+[07/Oct/2025 02:32:06] "GET /status/ HTTP/1.1" 200 2977
+[07/Oct/2025 02:32:07] "GET /status/ HTTP/1.1" 200 2973
+[07/Oct/2025 02:32:18] "GET /status/ HTTP/1.1" 200 2973
+[07/Oct/2025 02:32:48] "GET /status/ HTTP/1.1" 200 2973
+[07/Oct/2025 02:33:06] "GET /status/ HTTP/1.1" 200 2977
+[07/Oct/2025 02:33:07] "GET /status/ HTTP/1.1" 200 2973
+[07/Oct/2025 02:33:18] "GET /status/ HTTP/1.1" 200 2973
+[07/Oct/2025 02:33:48] "GET /status/ HTTP/1.1" 200 2973
+[07/Oct/2025 02:34:06] "GET /status/ HTTP/1.1" 200 2977
+[07/Oct/2025 02:34:07] "GET /status/ HTTP/1.1" 200 2973
+[07/Oct/2025 02:34:18] "GET /status/ HTTP/1.1" 200 2973
+[07/Oct/2025 02:34:48] "GET /status/ HTTP/1.1" 200 2973
+[07/Oct/2025 02:35:06] "GET /status/ HTTP/1.1" 200 2977
+[07/Oct/2025 02:35:07] "GET /status/ HTTP/1.1" 200 2973
+[07/Oct/2025 02:35:18] "GET /status/ HTTP/1.1" 200 2973
+[07/Oct/2025 02:35:48] "GET /status/ HTTP/1.1" 200 2973
+[07/Oct/2025 02:36:06] "GET /status/ HTTP/1.1" 200 2977
+[07/Oct/2025 02:36:07] "GET /status/ HTTP/1.1" 200 2973
+[07/Oct/2025 02:36:18] "GET /status/ HTTP/1.1" 200 2973
+[07/Oct/2025 02:36:48] "GET /status/ HTTP/1.1" 200 2973
+[07/Oct/2025 02:37:06] "GET /status/ HTTP/1.1" 200 2977
+[07/Oct/2025 02:37:07] "GET /status/ HTTP/1.1" 200 2973
+[07/Oct/2025 02:37:18] "GET /status/ HTTP/1.1" 200 2973
+[07/Oct/2025 02:37:48] "GET /status/ HTTP/1.1" 200 2973
+[07/Oct/2025 02:38:07] "GET /status/ HTTP/1.1" 200 2977
+[07/Oct/2025 02:38:07] "GET /status/ HTTP/1.1" 200 2973
+[07/Oct/2025 02:38:18] "GET /status/ HTTP/1.1" 200 2973
+[07/Oct/2025 02:38:48] "GET /status/ HTTP/1.1" 200 2973
+[07/Oct/2025 02:39:06] "GET /status/ HTTP/1.1" 200 2977
+[07/Oct/2025 02:39:07] "GET /status/ HTTP/1.1" 200 2973
+[07/Oct/2025 02:39:18] "GET /status/ HTTP/1.1" 200 2973
+[07/Oct/2025 02:39:48] "GET /status/ HTTP/1.1" 200 2973
+[07/Oct/2025 02:40:06] "GET /status/ HTTP/1.1" 200 2973
+[07/Oct/2025 02:40:06] "GET /status/ HTTP/1.1" 200 2977
+[07/Oct/2025 02:40:18] "GET /status/ HTTP/1.1" 200 2973
+[07/Oct/2025 02:40:48] "GET /status/ HTTP/1.1" 200 2973
+[07/Oct/2025 02:41:06] "GET /status/ HTTP/1.1" 200 2977
+[07/Oct/2025 02:41:07] "GET /status/ HTTP/1.1" 200 2973
+[07/Oct/2025 02:41:18] "GET /status/ HTTP/1.1" 200 2973
+[07/Oct/2025 02:41:48] "GET /status/ HTTP/1.1" 200 2973
+[07/Oct/2025 02:42:06] "GET /status/ HTTP/1.1" 200 2973
+[07/Oct/2025 02:42:07] "GET /status/ HTTP/1.1" 200 2977
+[07/Oct/2025 02:42:18] "GET /status/ HTTP/1.1" 200 2973
+[07/Oct/2025 02:42:48] "GET /status/ HTTP/1.1" 200 2972
+[07/Oct/2025 02:43:06] "GET /status/ HTTP/1.1" 200 2972
+[07/Oct/2025 02:43:07] "GET /status/ HTTP/1.1" 200 2976
+[07/Oct/2025 02:43:18] "GET /status/ HTTP/1.1" 200 2972
+[07/Oct/2025 02:43:48] "GET /status/ HTTP/1.1" 200 2972
+[07/Oct/2025 02:44:06] "GET /status/ HTTP/1.1" 200 2975
+[07/Oct/2025 02:44:06] "GET /status/ HTTP/1.1" 200 2971
+[07/Oct/2025 02:44:18] "GET /status/ HTTP/1.1" 200 2971
+[07/Oct/2025 02:44:48] "GET /status/ HTTP/1.1" 200 2971
+[07/Oct/2025 02:45:07] "GET /status/ HTTP/1.1" 200 2975
+[07/Oct/2025 02:45:07] "GET /status/ HTTP/1.1" 200 2971
+[07/Oct/2025 02:45:18] "GET /status/ HTTP/1.1" 200 2971
+[07/Oct/2025 02:45:48] "GET /status/ HTTP/1.1" 200 2971
+[07/Oct/2025 02:46:06] "GET /status/ HTTP/1.1" 200 2975
+[07/Oct/2025 02:46:07] "GET /status/ HTTP/1.1" 200 2971
+[07/Oct/2025 02:46:18] "GET /status/ HTTP/1.1" 200 2971
+[07/Oct/2025 02:46:48] "GET /status/ HTTP/1.1" 200 2971
+[07/Oct/2025 02:47:07] "GET /status/ HTTP/1.1" 200 2971
+[07/Oct/2025 02:47:07] "GET /status/ HTTP/1.1" 200 2975
+[07/Oct/2025 02:47:18] "GET /status/ HTTP/1.1" 200 2971
+[07/Oct/2025 02:48:06] "GET /status/ HTTP/1.1" 200 2975
+[07/Oct/2025 02:48:07] "GET /status/ HTTP/1.1" 200 2971
+[07/Oct/2025 02:48:07] "GET /status/ HTTP/1.1" 200 2971
+[07/Oct/2025 02:49:06] "GET /status/ HTTP/1.1" 200 2975
+[07/Oct/2025 02:49:06] "GET /status/ HTTP/1.1" 200 2971
+[07/Oct/2025 02:49:07] "GET /status/ HTTP/1.1" 200 2971
+[07/Oct/2025 02:50:07] "GET /status/ HTTP/1.1" 200 2971
+[07/Oct/2025 02:50:07] "GET /status/ HTTP/1.1" 200 2975
+[07/Oct/2025 02:50:07] "GET /status/ HTTP/1.1" 200 2971
+[07/Oct/2025 02:51:06] "GET /status/ HTTP/1.1" 200 2975
+[07/Oct/2025 02:51:07] "GET /status/ HTTP/1.1" 200 2971
+[07/Oct/2025 02:51:07] "GET /status/ HTTP/1.1" 200 2971
+[07/Oct/2025 02:51:18] "GET /status/ HTTP/1.1" 200 2971
+[07/Oct/2025 02:51:48] "GET /status/ HTTP/1.1" 200 2971
+[07/Oct/2025 02:52:07] "GET /status/ HTTP/1.1" 200 2975
+[07/Oct/2025 02:52:07] "GET /status/ HTTP/1.1" 200 2971
+[07/Oct/2025 02:52:18] "GET /status/ HTTP/1.1" 200 2971
+[07/Oct/2025 02:52:48] "GET /status/ HTTP/1.1" 200 2971
+[07/Oct/2025 02:52:55] "GET /status/ HTTP/1.1" 200 2971
+[07/Oct/2025 02:52:59] "GET / HTTP/1.1" 200 87345
+[07/Oct/2025 02:52:59] "GET /theme/get/ HTTP/1.1" 200 18
+[07/Oct/2025 02:52:59] "GET /status/ HTTP/1.1" 200 2968
+[07/Oct/2025 02:53:06] "GET /status/ HTTP/1.1" 200 2971
+[07/Oct/2025 02:54:06] "GET /status/ HTTP/1.1" 200 2971
+[07/Oct/2025 02:55:06] "GET /status/ HTTP/1.1" 200 2971
+[07/Oct/2025 02:56:06] "GET /status/ HTTP/1.1" 200 2971
+[07/Oct/2025 02:57:06] "GET /status/ HTTP/1.1" 200 2971
+[07/Oct/2025 02:58:06] "GET /status/ HTTP/1.1" 200 2971
+[07/Oct/2025 02:59:06] "GET /status/ HTTP/1.1" 200 2971
+[07/Oct/2025 03:00:06] "GET /status/ HTTP/1.1" 200 2971
+[07/Oct/2025 03:01:06] "GET /status/ HTTP/1.1" 200 2971
+[07/Oct/2025 03:02:06] "GET /status/ HTTP/1.1" 200 2971
+[07/Oct/2025 03:03:06] "GET /status/ HTTP/1.1" 200 2971
+[07/Oct/2025 03:04:06] "GET /status/ HTTP/1.1" 200 2971
+[07/Oct/2025 03:05:06] "GET /status/ HTTP/1.1" 200 2971
+[07/Oct/2025 03:06:06] "GET /status/ HTTP/1.1" 200 2971
+[07/Oct/2025 03:07:06] "GET /status/ HTTP/1.1" 200 2971
+[07/Oct/2025 03:08:06] "GET /status/ HTTP/1.1" 200 2971
+[07/Oct/2025 03:09:06] "GET /status/ HTTP/1.1" 200 2970
+[07/Oct/2025 03:10:06] "GET /status/ HTTP/1.1" 200 2970
+[07/Oct/2025 03:11:06] "GET /status/ HTTP/1.1" 200 2970
+[07/Oct/2025 03:12:06] "GET /status/ HTTP/1.1" 200 2970
+[07/Oct/2025 03:13:06] "GET /status/ HTTP/1.1" 200 2970
+[07/Oct/2025 03:14:06] "GET /status/ HTTP/1.1" 200 2970
+[07/Oct/2025 03:15:06] "GET /status/ HTTP/1.1" 200 2966
+[07/Oct/2025 03:16:06] "GET /status/ HTTP/1.1" 200 2966
+[07/Oct/2025 03:17:06] "GET /status/ HTTP/1.1" 200 2966
+[07/Oct/2025 03:18:06] "GET /status/ HTTP/1.1" 200 2966
+[07/Oct/2025 03:19:06] "GET /status/ HTTP/1.1" 200 2966
+[07/Oct/2025 03:20:06] "GET /status/ HTTP/1.1" 200 2966
+[07/Oct/2025 03:21:06] "GET /status/ HTTP/1.1" 200 2966
+[07/Oct/2025 03:22:06] "GET /status/ HTTP/1.1" 200 2966
+[07/Oct/2025 03:23:06] "GET /status/ HTTP/1.1" 200 2966
+[07/Oct/2025 03:24:06] "GET /status/ HTTP/1.1" 200 2965
+[07/Oct/2025 03:25:06] "GET /status/ HTTP/1.1" 200 2965
+[07/Oct/2025 03:26:06] "GET /status/ HTTP/1.1" 200 2964
+[07/Oct/2025 23:40:45] "GET /status/ HTTP/1.1" 302 0

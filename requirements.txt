@@ -1,0 +1,8 @@
+celery
+channels
+channels-redis
+Django
+django-bootstrap5
+python-dateutil
+pytz
+redis

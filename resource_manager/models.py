@@ -113,6 +113,8 @@ class ResourceQueue(models.Model):
     joined_at = models.DateTimeField(auto_now_add=True)
     estimated_wait_time = models.DurationField(default=timedelta(0))
     is_active = models.BooleanField(default=True)
+    # How much time (in minutes) the user requests when joining queue
+    requested_minutes = models.PositiveIntegerField(default=60)
     position = models.PositiveIntegerField(default=0)
 
     class Meta:
@@ -137,11 +139,27 @@ class ResourceQueue(models.Model):
         current_usage = self.resource.get_current_usage()
         if current_usage:
             remaining_time = current_usage.get_remaining_time()
-            position = self.get_position()
-            # Estimate 1 hour per person ahead in queue
-            estimated_time = remaining_time + ((position - 1) * 3600)
-            self.estimated_wait_time = timedelta(seconds=estimated_time)
+            # Sum requested minutes of users ahead in queue
+            ahead = ResourceQueue.objects.filter(
+                resource=self.resource,
+                is_active=True,
+                joined_at__lt=self.joined_at
+            )
+            ahead_minutes = sum([q.requested_minutes for q in ahead])
+            # estimated_time is remaining_time plus minutes requested by users ahead
+            estimated_seconds = remaining_time + (ahead_minutes * 60)
+            self.estimated_wait_time = timedelta(seconds=estimated_seconds)
             self.save()
+
+    def requested_display(self):
+        """Return a human-friendly string for requested_minutes, e.g. '1h 30m' or '45m'"""
+        h = self.requested_minutes // 60
+        m = self.requested_minutes % 60
+        if h > 0 and m > 0:
+            return f"{h}h {m}m"
+        if h > 0:
+            return f"{h}h"
+        return f"{m}m"
 
 class UserSession(models.Model):
     """Model to track user sessions and notification preferences"""

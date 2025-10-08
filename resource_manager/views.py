@@ -218,6 +218,7 @@ def release_resource(request):
 def join_queue(request):
     """Join the queue for a resource"""
     resource_id = request.POST.get('resource_id')
+    requested_minutes = int(request.POST.get('minutes', 60))
 
     try:
         resource = get_object_or_404(Resource, id=resource_id, is_active=True)
@@ -230,7 +231,7 @@ def join_queue(request):
                 resource=resource,
                 user=request.user,
                 is_active=True,
-                defaults={'position': position}
+                defaults={'position': position, 'requested_minutes': requested_minutes}
             )
         except IntegrityError:
             # A concurrent request likely created the same active tuple — fetch it
@@ -351,7 +352,7 @@ def get_status(request):
         current_usage = resource.get_current_usage()
 
         queue_entries = resource.queue_entries.filter(is_active=True).order_by('joined_at')
-        queue_list = [q.user.username for q in queue_entries]
+        queue_list = [{'username': q.user.username, 'minutes': q.requested_minutes} for q in queue_entries]
         user_in_queue = queue_entries.filter(user=request.user).exists()
 
         resource_status = {

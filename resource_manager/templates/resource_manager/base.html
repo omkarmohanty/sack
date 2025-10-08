@@ -466,17 +466,32 @@
                 </div>
                 <div class="modal-body">
                     <form id="usageTimeForm">
-                        <div class="mb-3">
-                            <label for="usageMinutes" class="form-label">Duration:</label>
-                            <select class="form-select" id="usageMinutes" required>
-                                <option value="15">15 minutes</option>
-                                <option value="30">30 minutes</option>
-                                <option value="60" selected>1 hour</option>
-                                <option value="120">2 hours</option>
-                                <option value="180">3 hours</option>
-                                <option value="240">4 hours</option>
-                                <option value="480">8 hours</option>
-                            </select>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="usageHours" class="form-label">Hours</label>
+                                <select class="form-select" id="usageHours">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="usageMins" class="form-label">Minutes</label>
+                                <select class="form-select" id="usageMins">
+                                    <option value="0">0</option>
+                                    <option value="15">15</option>
+                                    <option value="30">30</option>
+                                    <option value="45">45</option>
+                                </select>
+                            </div>
                         </div>
                         <input type="hidden" id="selectedResourceId">
                     </form>
@@ -488,6 +503,48 @@
                     <button type="button" class="btn btn-success" id="confirmOccupy">
                         <i class="fas fa-play me-1"></i>Occupy Resource
                     </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Queue Time Selection Modal -->
+    <div class="modal fade" id="queueTimeModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-clock me-2"></i>Join Queue - Request Time</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="queueTimeForm">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="queueHours" class="form-label">Hours</label>
+                                <select class="form-select" id="queueHours">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="queueMins" class="form-label">Minutes</label>
+                                <select class="form-select" id="queueMins">
+                                    <option value="0">0</option>
+                                    <option value="15">15</option>
+                                    <option value="30">30</option>
+                                    <option value="45">45</option>
+                                </select>
+                            </div>
+                        </div>
+                        <input type="hidden" id="queueResourceId">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="confirmQueue">Join Queue</button>
                 </div>
             </div>
         </div>
@@ -736,7 +793,8 @@
                             let listHtml = `<div class="queue-list small text-start"><i class="fas fa-users me-1"></i><ul class="mb-0 ps-3">`;
                             const maxShow = 5;
                             resource.queue_list.slice(0, maxShow).forEach(u => {
-                                listHtml += `<li>${u}</li>`;
+                                const timeLabel = (u.minutes && u.minutes > 0) ? ` <span class="text-muted small">(${formatMinutes(u.minutes)})</span>` : '';
+                                listHtml += `<li>${u.username}${timeLabel}</li>`;
                             });
                             if (resource.queue_list.length > maxShow) {
                                 listHtml += `<li class=\"text-muted\">...and ${resource.queue_list.length - maxShow} more</li>`;
@@ -782,7 +840,7 @@
                 `;
             } else {
                 buttonHTML = `
-                    <button class="btn btn-queue btn-sm" onclick="joinQueue(${resource.id})">
+                    <button class="btn btn-queue btn-sm" onclick="showQueueModal(${resource.id})">
                         <i class="fas fa-clock me-1"></i>Queue
                     </button>
                 `;
@@ -867,6 +925,12 @@
             modal.show();
         }
 
+        function showQueueModal(resourceId) {
+            document.getElementById('queueResourceId').value = resourceId;
+            const modal = new bootstrap.Modal(document.getElementById('queueTimeModal'));
+            modal.show();
+        }
+
         function setupModalListeners() {
             // Time extension confirmation
             document.getElementById('confirmExtension').addEventListener('click', function() {
@@ -886,7 +950,9 @@
             // Usage time confirmation
             document.getElementById('confirmOccupy').addEventListener('click', function() {
                 const resourceId = document.getElementById('selectedResourceId').value;
-                const minutes = document.getElementById('usageMinutes').value;
+                const hours = parseInt(document.getElementById('usageHours').value || '0', 10);
+                const mins = parseInt(document.getElementById('usageMins').value || '0', 10);
+                const minutes = (hours * 60) + mins;
                 const button = this;
 
                 button.innerHTML = '<span class="loading-spinner"></span>Occupying...';
@@ -898,6 +964,48 @@
                     bootstrap.Modal.getInstance(document.getElementById('usageTimeModal')).hide();
                 });
             });
+
+            // Queue time confirmation
+            const confirmQueueBtn = document.getElementById('confirmQueue');
+            if (confirmQueueBtn) {
+                confirmQueueBtn.addEventListener('click', function() {
+                    const resourceId = document.getElementById('queueResourceId').value;
+                    const hours = parseInt(document.getElementById('queueHours').value || '0', 10);
+                    const mins = parseInt(document.getElementById('queueMins').value || '0', 10);
+                    const minutes = (hours * 60) + mins || 60;
+                    const btn = this;
+
+                    btn.innerHTML = '<span class="loading-spinner"></span>Joining...';
+                    btn.disabled = true;
+
+                    // Use joinQueue endpoint with minutes
+                    fetch('/join-queue/', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded',
+                            'X-CSRFToken': getCookie('csrftoken')
+                        },
+                        body: `resource_id=${resourceId}&minutes=${minutes}`
+                    })
+                    .then(r => r.json())
+                    .then(data => {
+                        if (data.success) {
+                            showNotification(`<i class="fas fa-check-circle me-2"></i><strong>Success!</strong> ${data.message}`, 'success');
+                            setTimeout(() => window.location.reload(), 900);
+                        } else {
+                            showNotification(`<i class="fas fa-exclamation-circle me-2"></i><strong>Error:</strong> ${data.message}`, 'error');
+                        }
+                    })
+                    .catch(() => {
+                        showNotification(`<i class="fas fa-exclamation-triangle me-2"></i><strong>Network Error:</strong> Failed to join queue`, 'error');
+                    })
+                    .finally(() => {
+                        btn.innerHTML = 'Join Queue';
+                        btn.disabled = false;
+                        bootstrap.Modal.getInstance(document.getElementById('queueTimeModal')).hide();
+                    });
+                });
+            }
 
             // Keyboard shortcuts
             document.addEventListener('keydown', function(event) {
@@ -1032,35 +1140,10 @@
         }
 
         function joinQueue(resourceId) {
-            fetch('/join-queue/', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                    'X-CSRFToken': getCookie('csrftoken')
-                },
-                body: `resource_id=${resourceId}`
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    showNotification(
-                        `<i class="fas fa-check-circle me-2"></i><strong>Success!</strong> ${data.message}`,
-                        'success'
-                    );
-                    setTimeout(() => window.location.reload(), 1000);
-                } else {
-                    showNotification(
-                        `<i class="fas fa-exclamation-circle me-2"></i><strong>Error:</strong> ${data.message}`,
-                        'error'
-                    );
-                }
-            })
-            .catch(error => {
-                showNotification(
-                    `<i class="fas fa-exclamation-triangle me-2"></i><strong>Network Error:</strong> Failed to join queue`,
-                    'error'
-                );
-            });
+            // Backwards-compatible: open the queue time selection modal so the user
+            // can pick how much time they want. This avoids immediate POST without
+            // a requested_minutes value.
+            showQueueModal(resourceId);
         }
 
         // Utility functions
@@ -1120,6 +1203,14 @@
                 );
             }
         }
+
+            function formatMinutes(totalMinutes) {
+                const h = Math.floor(totalMinutes / 60);
+                const m = totalMinutes % 60;
+                if (h > 0 && m > 0) return `${h}h ${m}m`;
+                if (h > 0) return `${h}h`;
+                return `${m}m`;
+            }
     </script>
 
     {% block extra_js %}{% endblock %}
